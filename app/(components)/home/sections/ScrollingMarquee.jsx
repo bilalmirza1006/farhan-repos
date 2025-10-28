@@ -11,7 +11,7 @@ export default function ScrollingMarquee() {
     ];
 
     return (
-        <div className="bg-primarycolor text-white text-sm md:text-lg font-inter font-medium py-4 overflow-hidden">
+        <div className="bg-primarycolor flex items-center text-white text-sm md:text-lg font-inter font-medium py-4 overflow-hidden">
             <marquee
                 behavior="scroll"
                 direction="left"
