@@ -53,7 +53,7 @@ export const Header = () => {
             bg="bg-none"
             color="text-black"
             cn={
-              "hover:underline hover:bg-primarycolor hover:text-white !px-2 md:!px-6 "
+              " hover:bg-primarycolor hover:text-white !px-2 md:!px-6 "
             }
           />
           <Button
@@ -71,17 +71,15 @@ export const Header = () => {
 
       {/* Background Overlay (click to close) */}
       <div
-        className={`fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
-          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 md:hidden ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setMenuOpen(false)}
       ></div>
 
       {/* Slide-in Mobile Menu (from left) */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-50 ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-50 ${menuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200">
           <img src="/logo.png" alt="Logo" className="h-8" />

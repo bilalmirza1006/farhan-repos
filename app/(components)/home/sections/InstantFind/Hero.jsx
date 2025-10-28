@@ -43,7 +43,7 @@ const Hero = () => {
               </div>
               <button
                 type="submit"
-                className="bg-[#c8004b] hover:bg-[#a1003e] text-white text-sm font-semibold px-6 py-2.5 rounded-md transition-colors duration-200"
+                className="bg-[#c8004b] hover:bg-[#a1003e] cursor-pointer text-white text-sm font-semibold px-6 py-2.5 rounded-md transition-colors duration-200"
               >
                 Search now!
               </button>

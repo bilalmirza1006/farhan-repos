@@ -1,3 +1,4 @@
+import SpotlightCard from '@/components/SpotlightCard';
 import { BookOpen, Clock } from 'lucide-react';
 import React from 'react'
 
@@ -9,7 +10,10 @@ const CourseCard = ({ title, duration, price, onUniversityClick }) => {
     };
 
     return (
-        <div className="bg-white border border-[#E3E3E3] rounded-[12px] p-5 drop-shadow-sm hover:shadow-md transition-all duration-200">
+        <SpotlightCard className="custom-spotlight-card bg-white" spotlightColor="rgba(199, 4, 76, 0.3)">
+
+
+            {/* <div className="bg-white border border-[#E3E3E3] rounded-[12px] p-5 drop-shadow-sm hover:shadow-md transition-all duration-200"> */}
             {/* Title */}
             <h3 className="text-lg font-inter font-semibold text-[#C7044C] mb-2 text-start">{title}</h3>
 
@@ -29,7 +33,9 @@ const CourseCard = ({ title, duration, price, onUniversityClick }) => {
                     Universitiess: ${price}
                 </button>
             </div>
-        </div>
+            {/* </div> */}
+        </SpotlightCard>
+
     );
 }
 

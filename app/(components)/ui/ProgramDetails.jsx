@@ -3,13 +3,13 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
 export default function ProgramDetails({ title, children }) {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     return (
         <div className="bg-white rounded-[6px] drop-shadow-sm border border-[#53535333]">
             <button
                 onClick={() => setOpen(!open)}
-                className="w-full flex justify-between items-center p-4 text-left text-secondary font-normal hover:bg-gray-50 transition"
+                className="w-full flex justify-between cursor-pointer items-center p-4 text-left text-secondary font-normal hover:bg-gray-50 transition"
             >
                 {title}
                 <span className="text-gray-500">{open ? <ChevronUp /> : <ChevronDown />}</span>

@@ -117,7 +117,7 @@ export default function FaqSection() {
           {/* <button className="bg-white text-[#c8004b] font-semibold px-6 py-2 rounded-md shadow hover:bg-gray-100 transition">
                     Sign Up Now!
                 </button> */}
-          <Button text="Sign Up Now!" color="text-[#C7044C]" bg="bg-white" />
+          <Button cn={'hover:text-white'} text="Sign Up Now!" color="text-[#C7044C]" bg="bg-white" />
         </div>
       </div>
     </section>
