@@ -50,7 +50,7 @@ export default function CourseDetailPage({
       <div className="max-w-[1560px] mx-auto">
         {/* Back Button */}
         <Button
-          text="Back to Programssssss"
+          text="Back to Programs"
           icon={<ArrowLeft />}
           color="text-white"
           bg="bg-primarycolor"

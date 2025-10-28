@@ -1,27 +1,27 @@
-import { useState } from "react";
-import { Group, Search } from "lucide-react";
-import Dropdown from "../../ui/Dropdown";
-import FilterBar from "../../ui/Filterbar";
-import ProgramCard from "./ProgramCard";
-import Modal from "../../ui/Modal";
-import { SlidersHorizontal } from "lucide-react";
+import { useState } from 'react';
+import { Group, Search } from 'lucide-react';
+import Dropdown from '../../ui/Dropdown';
+import FilterBar from '../../ui/Filterbar';
+import ProgramCard from './ProgramCard';
+import Modal from '../../ui/Modal';
+import { SlidersHorizontal } from 'lucide-react';
 
 export default function ProgramsGrid({ data, onCourseClick }) {
   const [modal, setModal] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
 
   const openModalHandler = () => setModal(true);
   const closeModalHandler = () => setModal(false);
 
   // Dummy options
   const options = [
-    { id: 1, label: "Computer Science", count: 1091 },
-    { id: 2, label: "Biology", count: 12 },
-    { id: 3, label: "Data Science", count: 307 },
-    { id: 4, label: "MBA", count: 29 },
-    { id: 5, label: "Automotive Engineering", count: 102 },
-    { id: 6, label: "Business Analytics", count: 18 },
-    { id: 7, label: "Artificial Intelligence", count: 43 },
+    { id: 1, label: 'Computer Science', count: 1091 },
+    { id: 2, label: 'Biology', count: 12 },
+    { id: 3, label: 'Data Science', count: 307 },
+    { id: 4, label: 'MBA', count: 29 },
+    { id: 5, label: 'Automotive Engineering', count: 102 },
+    { id: 6, label: 'Business Analytics', count: 18 },
+    { id: 7, label: 'Artificial Intelligence', count: 43 },
   ];
 
   const filteredOptions = options.filter((opt) =>
@@ -56,12 +56,8 @@ export default function ProgramsGrid({ data, onCourseClick }) {
       </div>
 
       {/* Filter Bar */}
-      <div>
-        <FilterBar
-          options={options}
-          placeholder="Search Program"
-          icon={Group}
-        />
+      <div className="hidden md:block">
+        <FilterBar options={options} placeholder="Search Program" icon={Group} />
       </div>
 
       <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-8.5">
@@ -86,9 +82,7 @@ export default function ProgramsGrid({ data, onCourseClick }) {
           <div className="space-y-4">
             {/* Header */}
             <div>
-              <p className="text-gray-500 text-sm flex">
-                Apply filters to narrow your results
-              </p>
+              <p className="text-gray-500 text-sm flex">Apply filters to narrow your results</p>
             </div>
 
             {/* Dropdown */}
@@ -116,11 +110,7 @@ export default function ProgramsGrid({ data, onCourseClick }) {
             {/* Program options */}
             <div className="flex flex-wrap gap-2 mb-0">
               {options
-                .filter((opt) =>
-                  opt.label
-                    .toLowerCase()
-                    .includes(searchTerm?.toLowerCase() || "")
-                )
+                .filter((opt) => opt.label.toLowerCase().includes(searchTerm?.toLowerCase() || ''))
                 .map((option) => (
                   <button
                     key={option.id}

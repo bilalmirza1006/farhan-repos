@@ -1,9 +1,9 @@
-"use client";
-import React, { useState } from "react";
-import Hero from "./Hero";
-import Dropdown from "@/app/(components)/ui/Dropdown";
-import FilterBar from "@/app/(components)/ui/Filterbar";
-import { Search } from "lucide-react";
+'use client';
+import React, { useState } from 'react';
+import Hero from './Hero';
+import Dropdown from '@/app/(components)/ui/Dropdown';
+import FilterBar from '@/app/(components)/ui/Filterbar';
+import { Search } from 'lucide-react';
 import {
   BrainCircuit,
   Calendar,
@@ -12,148 +12,122 @@ import {
   RefreshCcw,
   SlidersHorizontal,
   BookOpen,
-} from "lucide-react";
-import AboutUniversityCard from "./AboutUniversityCard";
-import Modal from "@/app/(components)/ui/Modal";
+} from 'lucide-react';
+import AboutUniversityCard from './AboutUniversityCard';
+import Modal from '@/app/(components)/ui/Modal';
 
 const InstantFindLayout = () => {
-  const [activeTab, setActiveTab] = useState("Universities");
+  const [activeTab, setActiveTab] = useState('Universities');
   const [modal, setModal] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [activeFilterTab, setActiveFilterTab] = useState("Program");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeFilterTab, setActiveFilterTab] = useState('Program');
   const [selectedFilters, setSelectedFilters] = useState([]);
 
   const openModalHandler = () => setModal(true);
   const closeModalHandler = () => setModal(false);
 
   const options = [
-    { id: 1, label: "USA" },
-    { id: 2, label: "UK" },
-    { id: 3, label: "Canada" },
+    { id: 1, label: 'USA' },
+    { id: 2, label: 'UK' },
+    { id: 3, label: 'Canada' },
   ];
 
   const batchIntakeOptions = [
-    { id: 1, label: "Summer" },
-    { id: 2, label: "Fall" },
-    { id: 3, label: "Winter" },
+    { id: 1, label: 'Summer' },
+    { id: 2, label: 'Fall' },
+    { id: 3, label: 'Winter' },
   ];
 
   const programs = [
-    { id: 1, label: "Computer Science" },
-    { id: 2, label: "Business Analytics" },
+    { id: 1, label: 'Computer Science' },
+    { id: 2, label: 'Business Analytics' },
   ];
 
-  const filterTabs = ["Program", "Intake batch", "Country"];
+  const filterTabs = ['Program', 'Intake batch', 'Country'];
 
   const filterOptions = {
     Program: programs,
-    "Intake batch": batchIntakeOptions,
+    'Intake batch': batchIntakeOptions,
     Country: options,
   };
 
   const toggleFilter = (label) => {
     setSelectedFilters((prev) =>
-      prev.includes(label)
-        ? prev.filter((item) => item !== label)
-        : [...prev, label]
+      prev.includes(label) ? prev.filter((item) => item !== label) : [...prev, label]
     );
   };
 
   const universities = [
     {
-      name: "UNIVERSITY OF NEW HAVEN",
-      program: "MS Computer Science",
-      locations: [
-        "Kansas City, MO",
-        "Dallas, TX",
-        "Miami, FL",
-        "Jersey City, NJ",
-        "Kenosha, WI",
-      ],
-      tuition: "$1890/yr",
-      applicationFee: "$76",
-      gre: "Waiver",
+      name: 'UNIVERSITY OF NEW HAVEN',
+      program: 'MS Computer Science',
+      locations: ['Kansas City, MO', 'Dallas, TX', 'Miami, FL', 'Jersey City, NJ', 'Kenosha, WI'],
+      tuition: '$1890/yr',
+      applicationFee: '$76',
+      gre: 'Waiver',
       documents: 18,
-      deposit: "$200",
-      scholarship: "$200",
-      startDate: "Full 01 May / 309 days",
-      image: "/images/university1.png",
+      deposit: '$200',
+      scholarship: '$200',
+      startDate: 'Full 01 May / 309 days',
+      image: '/images/university1.png',
     },
     {
-      name: "UNIVERSITY OF NEW SOUTH ASIA",
-      program: "MS Computer Science",
-      locations: [
-        "Boston, MA",
-        "Houston, TX",
-        "Seattle, WA",
-        "San Diego, CA",
-        "Chicago, IL",
-      ],
-      tuition: "$2100/yr",
-      applicationFee: "$80",
-      gre: "Required",
+      name: 'UNIVERSITY OF NEW SOUTH ASIA',
+      program: 'MS Computer Science',
+      locations: ['Boston, MA', 'Houston, TX', 'Seattle, WA', 'San Diego, CA', 'Chicago, IL'],
+      tuition: '$2100/yr',
+      applicationFee: '$80',
+      gre: 'Required',
       documents: 16,
-      deposit: "$250",
-      scholarship: "$300",
-      startDate: "Full 15 June / 280 days",
-      image: "/images/university2.png",
+      deposit: '$250',
+      scholarship: '$300',
+      startDate: 'Full 15 June / 280 days',
+      image: '/images/university2.png',
     },
     {
-      name: "UNIVERSITY OF CENTRAL EUROPE",
-      program: "MS Data Science",
+      name: 'UNIVERSITY OF CENTRAL EUROPE',
+      program: 'MS Data Science',
       locations: [
-        "New York, NY",
-        "Denver, CO",
-        "Phoenix, AZ",
-        "Las Vegas, NV",
-        "San Francisco, CA",
+        'New York, NY',
+        'Denver, CO',
+        'Phoenix, AZ',
+        'Las Vegas, NV',
+        'San Francisco, CA',
       ],
-      tuition: "$1990/yr",
-      applicationFee: "$70",
-      gre: "Waiver",
+      tuition: '$1990/yr',
+      applicationFee: '$70',
+      gre: 'Waiver',
       documents: 20,
-      deposit: "$180",
-      scholarship: "$250",
-      startDate: "Full 10 April / 325 days",
-      image: "/images/university3.png",
+      deposit: '$180',
+      scholarship: '$250',
+      startDate: 'Full 10 April / 325 days',
+      image: '/images/university3.png',
     },
     {
-      name: "UNIVERSITY OF SOUTHERN ASIA",
-      program: "MS Artificial Intelligence",
-      locations: [
-        "Los Angeles, CA",
-        "Austin, TX",
-        "Orlando, FL",
-        "Newark, NJ",
-        "Tampa, FL",
-      ],
-      tuition: "$2200/yr",
-      applicationFee: "$90",
-      gre: "Required",
+      name: 'UNIVERSITY OF SOUTHERN ASIA',
+      program: 'MS Artificial Intelligence',
+      locations: ['Los Angeles, CA', 'Austin, TX', 'Orlando, FL', 'Newark, NJ', 'Tampa, FL'],
+      tuition: '$2200/yr',
+      applicationFee: '$90',
+      gre: 'Required',
       documents: 22,
-      deposit: "$300",
-      scholarship: "$400",
-      startDate: "Full 01 May / 309 days",
-      image: "/images/university4.png",
+      deposit: '$300',
+      scholarship: '$400',
+      startDate: 'Full 01 May / 309 days',
+      image: '/images/university4.png',
     },
     {
-      name: "UNIVERSITY OF EASTERN CANADA",
-      program: "MS Cybersecurity",
-      locations: [
-        "Toronto, ON",
-        "Vancouver, BC",
-        "Montreal, QC",
-        "Calgary, AB",
-        "Ottawa, ON",
-      ],
-      tuition: "$2500/yr",
-      applicationFee: "$85",
-      gre: "Waiver",
+      name: 'UNIVERSITY OF EASTERN CANADA',
+      program: 'MS Cybersecurity',
+      locations: ['Toronto, ON', 'Vancouver, BC', 'Montreal, QC', 'Calgary, AB', 'Ottawa, ON'],
+      tuition: '$2500/yr',
+      applicationFee: '$85',
+      gre: 'Waiver',
       documents: 19,
-      deposit: "$220",
-      scholarship: "$500",
-      startDate: "Full 20 March / 330 days",
-      image: "/images/university5.png",
+      deposit: '$220',
+      scholarship: '$500',
+      startDate: 'Full 20 March / 330 days',
+      image: '/images/university5.png',
     },
   ];
 
@@ -163,19 +137,18 @@ const InstantFindLayout = () => {
       {/* Header */}
       <div className="max-w-[1560px] bg-white drop-shadow-sm max-h-16 py-3 px-6 flex items-center justify-between mx-auto mt-18 ">
         <div className="font-semibold font-inter text-lg md:text-xl text-Primarytext">
-          We Found{" "}
-          <span className="text-[#C7044C]">{universities.length} Courses</span>
+          We Found <span className="text-[#C7044C]">{universities.length} Courses</span>
         </div>
         <div className="flex gap-5">
           <div className="hidden md:block flex bg-[#F0F0F0B2] rounded-[5.4px] p-1">
-            {["Universities", "Scholarship"].map((tab) => (
+            {['Universities', 'Scholarship'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-4 py-2 rounded-md text-sm font-inter font-medium transition-all duration-200 ${
                   activeTab === tab
-                    ? "bg-white shadow text-black font-semibold"
-                    : "text-gray-500 hover:text-gray-700"
+                    ? 'bg-white shadow text-black font-semibold'
+                    : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
                 {tab}
@@ -191,8 +164,8 @@ const InstantFindLayout = () => {
           <div className="hidden md:block">
             <Dropdown
               defaultTextColor="!text-white"
-              defaultValue={"Master"}
-              iconColor={"white"}
+              defaultValue={'Master'}
+              iconColor={'white'}
               className="!py-2 bg-primarycolor !text-white "
             />
           </div>
@@ -209,25 +182,13 @@ const InstantFindLayout = () => {
 
       {/* Desktop Filters */}
       <div className="hidden md:block">
-        <FilterBar
-          options={batchIntakeOptions}
-          placeholder="Search Intake Batch"
-          icon={Calendar}
-        />
+        <FilterBar options={batchIntakeOptions} placeholder="Search Intake Batch" icon={Calendar} />
       </div>
       <div className="hidden md:block">
-        <FilterBar
-          options={options}
-          placeholder="Search Country"
-          icon={Globe}
-        />
+        <FilterBar options={options} placeholder="Search Country" icon={Globe} />
       </div>
       <div className="hidden md:block">
-        <FilterBar
-          options={programs}
-          placeholder="Search Programs"
-          icon={BrainCircuit}
-        />
+        <FilterBar options={programs} placeholder="Search Programs" icon={BrainCircuit} />
       </div>
 
       {/* Grid */}
@@ -246,9 +207,7 @@ const InstantFindLayout = () => {
           className="fixed block md:hidden bottom-0 md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 py-6 px-5 rounded-t-[20px] md:rounded-[20px] shadow-lg bg-white transition-all duration-300"
         >
           <div className="space-y-5">
-            <p className="text-gray-500 text-sm flex">
-              Apply filters to narrow your results
-            </p>
+            <p className="text-gray-500 text-sm flex">Apply filters to narrow your results</p>
 
             {/* Dropdowns */}
             <div className="grid grid-cols-2 gap-2">
@@ -258,12 +217,7 @@ const InstantFindLayout = () => {
                 width="w-full"
                 className="!py-2"
               />
-              <Dropdown
-                title="Type"
-                defaultValue="Scholarship"
-                width="w-full"
-                className="!py-2"
-              />
+              <Dropdown title="Type" defaultValue="Scholarship" width="w-full" className="!py-2" />
             </div>
 
             {/* Tabs */}
@@ -274,8 +228,8 @@ const InstantFindLayout = () => {
                   onClick={() => setActiveFilterTab(tab)}
                   className={`w-1/3 text-sm py-2 rounded-md transition font-medium ${
                     activeFilterTab === tab
-                      ? "bg-[#C7044C] text-white"
-                      : "text-gray-700 hover:bg-gray-100"
+                      ? 'bg-[#C7044C] text-white'
+                      : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
                   {tab}
@@ -297,22 +251,20 @@ const InstantFindLayout = () => {
             {/* Filter Buttons */}
             <div className="flex flex-wrap gap-2">
               {filterOptions[activeFilterTab]
-                .filter((opt) =>
-                  opt.label.toLowerCase().includes(searchTerm.toLowerCase())
-                )
+                .filter((opt) => opt.label.toLowerCase().includes(searchTerm.toLowerCase()))
                 .map((option) => (
                   <button
                     key={option.id}
                     onClick={() => toggleFilter(option.label)}
                     className={`flex items-center gap-2 border rounded-md px-4 py-2 text-sm transition ${
                       selectedFilters.includes(option.label)
-                        ? "bg-[#C7044C] text-white border-[#C7044C]"
-                        : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
+                        ? 'bg-[#C7044C] text-white border-[#C7044C]'
+                        : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
                     }`}
                   >
-                    {activeFilterTab === "Intake batch" ? (
+                    {activeFilterTab === 'Intake batch' ? (
                       <Calendar className="w-4 h-4" />
-                    ) : activeFilterTab === "Country" ? (
+                    ) : activeFilterTab === 'Country' ? (
                       <Globe className="w-4 h-4" />
                     ) : (
                       <BookOpen className="w-4 h-4" />
