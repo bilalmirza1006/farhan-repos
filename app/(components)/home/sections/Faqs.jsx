@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { ArrowRight, Minus, Plus } from "lucide-react";
 import ProgramDetails from "../../ui/ProgramDetails";
 import Button from "../../ui/Button";
+import BlurText from "../../animation/blurtext/BlurText";
 
 const faqs = [
   {
@@ -40,6 +41,7 @@ export default function FaqSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+
   return (
     <section className="mt-20 ">
       {/* Heading */}
@@ -48,8 +50,22 @@ export default function FaqSection() {
           FAQ’s
         </p>
         <p className="font-inter text-2xl md:text-[38px] font-bold leading-14 text-primaryheading mt-3">
-          STUDY ABROAD:WHAT YOU{" "}
-          <span className="text-[#c8004b]"> NEED TO KNOW</span>
+          {/* STUDY ABROAD:WHAT YOU{" "}
+          <span className="text-[#c8004b]"> NEED TO KNOW</span> */}
+          <BlurText
+            text="STUDY ABROAD:WHAT YOU"
+            className="inline-block mr-3"
+            animateBy="words"
+            direction="top"
+            delay={150}
+          />
+          <BlurText
+            text="NEED TO KNOW"
+            className="inline-block text-[#C8102E]"
+            animateBy="words"
+            direction="top"
+            delay={150}
+          />
         </p>
       </div>
 
@@ -117,7 +133,7 @@ export default function FaqSection() {
           {/* <button className="bg-white text-[#c8004b] font-semibold px-6 py-2 rounded-md shadow hover:bg-gray-100 transition">
                     Sign Up Now!
                 </button> */}
-          <Button cn={'hover:text-white'} text="Sign Up Now!" color="text-[#C7044C]" bg="bg-white" />
+          <Button cn="!border-white !border hover:text-white" text="Sign Up Now!" color="text-[#C7044C]" bg="bg-white" />
         </div>
       </div>
     </section>

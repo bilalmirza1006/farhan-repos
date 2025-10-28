@@ -13,7 +13,7 @@ const CTABanner = () => {
                     all through one smart dashboard.
                 </p>
             </div>
-            <Button cn={'hover:text-white'} text="Sign Up Now!" color="text-[#C7044C]" bg="bg-white" />
+            <Button cn="!border-white !border hover:text-white" text="Sign Up Now!" color="text-[#C7044C]" bg="bg-white" />
         </div>
     )
 }
