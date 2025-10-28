@@ -12,7 +12,7 @@ const SpotlightCard = ({ children, className = '', spotlightColor = 'rgba(255, 2
     const rect = divRef.current.getBoundingClientRect();
     setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
-
+  /////
   const handleFocus = () => {
     setIsFocused(true);
     setOpacity(0.6);
