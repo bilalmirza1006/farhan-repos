@@ -1,20 +1,47 @@
-"use client";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+'use client';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useRef, useState, useLayoutEffect } from 'react';
+import { Minus, Plus } from 'lucide-react';
 
-export default function ProgramDetails({ title, children }) {
-    const [open, setOpen] = useState(false);
+export default function ProgramDetails({ title, children, isOpen, onToggle }) {
+  const ref = useRef(null);
+  const [height, setHeight] = useState(0);
 
-    return (
-        <div className="bg-white rounded-[6px] drop-shadow-sm border border-[#53535333]">
-            <button
-                onClick={() => setOpen(!open)}
-                className="w-full flex justify-between cursor-pointer items-center p-4 text-left text-secondary font-normal hover:bg-gray-50 transition"
-            >
-                {title}
-                <span className="text-gray-500">{open ? <ChevronUp /> : <ChevronDown />}</span>
-            </button>
-            {open && <div className="p-4 border-t border-gray-100 text-gray-600">{children}</div>}
-        </div>
-    );
+  // Measure content height when open/close changes
+  useLayoutEffect(() => {
+    if (ref.current) {
+      setHeight(ref.current.scrollHeight);
+    }
+  }, [isOpen, children]);
+
+  return (
+    <div className="border border-gray-200 rounded-md shadow-sm overflow-hidden">
+      {/* Header */}
+      <button
+        onClick={onToggle}
+        className="w-full flex justify-between items-center px-5 py-4 text-left focus:outline-none"
+      >
+        <span className="font-inter font-semibold text-primaryheading">{title}</span>
+        {isOpen ? (
+          <Minus size={18} className="text-[#C7044C]" />
+        ) : (
+          <Plus size={18} className="text-[#C7044C]" />
+        )}
+      </button>
+
+      {/* Animated Content */}
+      <AnimatePresence initial={false}>
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: isOpen ? height : 0, opacity: isOpen ? 1 : 0 }}
+          transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+          className="overflow-hidden"
+        >
+          <div ref={ref} className="px-5 pb-4">
+            {children}
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
 }
