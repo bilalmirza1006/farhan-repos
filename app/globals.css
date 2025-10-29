@@ -386,3 +386,20 @@
     }
   }
 }
+
+.marker {
+  position: relative;
+  display: inline;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: -15px;
+    background-image: url("/home-2/marker.svg");
+    transform: translateY(-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
