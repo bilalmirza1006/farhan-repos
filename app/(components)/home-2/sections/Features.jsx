@@ -32,7 +32,10 @@ const Features = () => {
 
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuresData.map((ft, i) => (
-          <article key={i} className="flex flex-col gap-4 justify-between items-start p-6 rounded-lg shadow-md bg-white">
+          <article
+            key={i}
+            className="flex flex-col gap-4 justify-between items-start p-6 rounded-lg shadow-md bg-white hover:shadow-xl transition-all duration-300"
+          >
             <div>
               <h4 className="text-2xl font-bold text-Primarytext">{ft.title}</h4>
               <ul className="flex flex-col gap-2 mt-2">

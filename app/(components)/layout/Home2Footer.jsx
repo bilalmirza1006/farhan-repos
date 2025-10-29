@@ -13,7 +13,9 @@ const Home2Footer = () => {
     <footer className="bg-[#F5F8FF66] ">
       <section className="max-w-[1440px] mx-auto py-[100px] px-5 border-t border-[#353F5552] grid grid-cols-4 gap-5">
         <section className="flex flex-col gap-4">
-          <img src={Logo.src} alt="" className="w-full max-w-[200px]" />
+          <Link href="/home-2" className="flex items-center">
+            <img src="/main-logo.png" alt="Logo" className="w-full max-w-[200px]" />
+          </Link>{" "}
           <p>Download the app by clicking the link below :</p>
           <div className="flex justify-between gap-4">
             <Link href="#">
