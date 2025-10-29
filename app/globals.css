@@ -239,6 +239,9 @@
   .text-Primarytext {
     color: var(--text-text-primary);
   }
+  .text-primarycolor {
+    color: var(--bg-primary-color);
+  }
   .text-secondarytext {
     color: var(--text-text-secondary);
   }
