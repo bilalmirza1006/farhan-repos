@@ -15,16 +15,15 @@ const WhatNext = () => {
     { text: "What if I'm unsure about my domain choice?", left: 20, rotate: -2 },
     { text: "What makes Get 2 Uni different from other career programs?", left: 0, rotate: 2 },
     { text: "How do I enroll in Get 2 Uni?", left: 90, rotate: 0 },
-    
   ];
 
   return (
     <section className="bg-[#F5F8FF] py-12 md:py-20 lg:py-[100px] px-5 md:px-8 lg:px-12 flex flex-col gap-8 md:gap-10 lg:gap-12">
       {/* Header */}
       <div className="max-w-[600px] text-center mx-auto flex flex-col gap-3 md:gap-4">
-        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-Primarytext leading-tight">
+        <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--heading)] leading-tight">
           What Happens Next <br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>(and How We Guide You)
+          (and How We Guide You)
         </h3>
       </div>
 

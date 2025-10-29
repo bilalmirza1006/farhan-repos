@@ -5,7 +5,7 @@ const UniDreams = () => {
   return (
     <section className="py-[100px] px-5 max-w-[1440px] mx-auto flex flex-col gap-10">
       <div className="max-w-[600px] text-center mx-auto flex flex-col gap-3">
-        <h3 className="text-4xl font-bold text-Primarytext">1,000+ University Dreams Realized – Yours Is Next</h3>
+        <h3 className="text-5xl font-bold text-[var(--heading)]">1,000+ University Dreams Realized – Yours Is Next</h3>
         <p className="text-Lighttext text-base">Join thousands of students we’ve guided to their dream universities and start your journey today.</p>
       </div>
       <section className="flex uni-dream-card-wrapper justify-center gap-5">
