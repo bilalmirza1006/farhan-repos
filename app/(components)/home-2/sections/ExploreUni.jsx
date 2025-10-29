@@ -139,7 +139,7 @@ const ExploreUni = () => {
       {/* Header */}
       <div className="max-w-[800px] text-center mx-auto flex flex-col items-center gap-3">
         <h5 className="text-[var(--bg-primary-color)] text-sm font-semibold tracking-wide marker">Explore, Connect & Enroll</h5>
-        <h3 className="text-5xl font-bold text-Primarytext">Explore Universities, Chat with Experts, Secure Your Admission</h3>
+        <h3 className="text-5xl font-bold text-[var(--heading)]">Explore Universities, Chat with Experts, Secure Your Admission</h3>
       </div>
 
       {/* Content with Sticky Image */}
@@ -152,7 +152,7 @@ const ExploreUni = () => {
               ref={(el) => (sectionRefs.current[index] = el)}
               className={`max-w-[500px] flex flex-col gap-4 min-h-[300px] ${index === 0 ? "mt-[150px]" : ""}`}
             >
-              <h4 className="text-4xl font-bold text-Primarytext">{item.title}</h4>
+              <h4 className="text-4xl font-bold text-[var(--heading)]">{item.title}</h4>
               <p className="text-Lighttext text-base">{item.description}</p>
             </div>
           ))}
