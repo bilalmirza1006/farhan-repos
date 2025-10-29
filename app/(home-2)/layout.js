@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Home2Header from '../(components)/layout/Home2Header';
-
+import React from "react";
+import Home2Header from "../(components)/layout/Home2Header";
+import Home2Footer from "../(components)/layout/Home2Footer";
 /**
  * Home-2 Layout - Completely Isolated
  * This layout is independent from the main site
@@ -13,7 +13,7 @@ export default function Home2Layout({ children }) {
     <div className="home-2-container">
       <Home2Header />
       <main>{children}</main>
+      <Home2Footer />
     </div>
   );
 }
-
