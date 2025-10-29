@@ -50,7 +50,7 @@ const SuccessSection = () => {
               <img src={Image1.src} alt="success-1" className="w-full rounded-xl h-[400px] object-cover" />
               {tooltip.show && tooltip.text === tooltipTexts[1] && (
                 <div
-                  className="absolute bg-white px-4 py-3 rounded-lg shadow-lg text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
+                  className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
                   style={{
                     left: `${tooltip.x + 15}px`,
                     top: `${tooltip.y + 15}px`,
@@ -68,7 +68,7 @@ const SuccessSection = () => {
               <img src={Image2.src} alt="success-1" className="w-full rounded-xl h-[400px] object-cover" />
               {tooltip.show && tooltip.text === tooltipTexts[2] && (
                 <div
-                  className="absolute bg-white px-4 py-3 rounded-lg shadow-lg text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
+                  className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
                   style={{
                     left: `${tooltip.x + 15}px`,
                     top: `${tooltip.y + 15}px`,
@@ -86,7 +86,7 @@ const SuccessSection = () => {
               <img src={Image3.src} alt="success-1" className="w-full rounded-xl h-[400px] object-cover" />
               {tooltip.show && tooltip.text === tooltipTexts[3] && (
                 <div
-                  className="absolute bg-white px-4 py-3 rounded-lg shadow-lg text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
+                  className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
                   style={{
                     left: `${tooltip.x + 15}px`,
                     top: `${tooltip.y + 15}px`,
