@@ -49,7 +49,6 @@ const ExploreUni = () => {
 
     if (!sections.length || !images.length) return;
 
-    // Initially hide all images except the first one
     images.forEach((img, index) => {
       if (index === 0) {
         gsap.set(img, { opacity: 1, y: 0 });
@@ -136,15 +135,14 @@ const ExploreUni = () => {
 
   return (
     <section ref={containerRef} className="py-[100px] px-4 max-w-[1440px] mx-auto flex flex-col gap-10">
-      {/* Header */}
       <div className="max-w-[800px] text-center mx-auto flex flex-col items-center gap-3">
         <h5 className="text-[var(--bg-primary-color)] text-sm font-semibold tracking-wide marker">Explore, Connect & Enroll</h5>
-        <h3 className="text-5xl font-bold text-[var(--heading)]">Explore Universities, Chat with Experts, Secure Your Admission</h3>
+        <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--heading)]">
+          Explore Universities, Chat with Experts, Secure Your Admission
+        </h3>
       </div>
 
-      {/* Content with Sticky Image */}
       <div className="relative flex gap-12 items-start">
-        {/* Left side - Scrolling content */}
         <div className="flex-1 flex flex-col gap-[400px]">
           {contentData.map((item, index) => (
             <div
@@ -152,16 +150,15 @@ const ExploreUni = () => {
               ref={(el) => (sectionRefs.current[index] = el)}
               className={`max-w-[500px] flex flex-col gap-4 min-h-[300px] ${index === 0 ? "mt-[150px]" : ""}`}
             >
-              <h4 className="text-4xl font-bold text-[var(--heading)]">{item.title}</h4>
+              <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--heading)]">{item.title}</h4>
               <p className="text-Lighttext text-base">{item.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Right side - Sticky image container */}
         <div className="relative flex-1 sticky top-32 h-[600px] flex items-center justify-center">
           <img src={BG.src} className="absolute inset-0 w-full h-full object-contain" alt="" />
-          <div className="relative w-full max-w-[400px] h-[600px]">
+          <div className="relative w-full max-w-[400px] h-[400px] md:h-[600px]">
             {contentData.map((item, index) => (
               <img
                 key={index}

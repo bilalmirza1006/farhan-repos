@@ -37,7 +37,7 @@ const SuccessSection = () => {
     <section className="bg-[#F5F8FF] py-[100px] px-5">
       <section className="flex flex-col max-w-[1000px] mx-auto gap-20 items-center ">
         <div className="max-w-[700px] text-center mx-auto flex flex-col gap-3">
-          <h3 className="text-5xl font-bold text-[var(--heading)]">
+          <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--heading)]">
             From Start to Success — <br />
             All in One Place
           </h3>
