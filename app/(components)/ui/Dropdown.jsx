@@ -1,14 +1,14 @@
-"use client";
-import { ChevronDown } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
+'use client';
+import { ChevronDown } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function Dropdown({
   title,
   options,
   defaultValue,
   onChange,
-  className = "",
+  className = '',
   width,
   iconColor,
   disabled,
@@ -18,7 +18,7 @@ export default function Dropdown({
 }) {
   const [selected, setSelected] = useState(defaultValue || null);
   const [open, setOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const dropdownRef = useRef(null);
   const searchInputRef = useRef(null);
 
@@ -30,11 +30,11 @@ export default function Dropdown({
     function handleClickOutside(e) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setOpen(false);
-        setSearchTerm(""); // Clear search when closing
+        setSearchTerm(''); // Clear search when closing
       }
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   // Focus search input when dropdown opens
@@ -49,7 +49,7 @@ export default function Dropdown({
   const handleSelect = (option) => {
     setSelected(option);
     setOpen(false);
-    setSearchTerm(""); // Clear search after selection
+    setSearchTerm(''); // Clear search after selection
     onChange?.(option);
   };
 
@@ -57,7 +57,7 @@ export default function Dropdown({
     if (!disabled) {
       setOpen(!open);
       if (!open) {
-        setSearchTerm(""); // Clear search when opening
+        setSearchTerm(''); // Clear search when opening
       }
     }
   };
@@ -65,16 +65,12 @@ export default function Dropdown({
   // Filter options based on search term
   const filteredOptions =
     searchable && searchTerm
-      ? options?.filter((option) =>
-          option.name.toLowerCase().includes(searchTerm.toLowerCase())
-        )
+      ? options?.filter((option) => option.name.toLowerCase().includes(searchTerm.toLowerCase()))
       : options;
 
   return (
     <div
-      className={`relative inline-block text-sm md:text-base ${
-        width ? width : "w-64"
-      }`}
+      className={`relative inline-block text-sm md:text-base ${width ? width : 'w-64'}`}
       ref={dropdownRef}
     >
       {/* Trigger */}
@@ -82,27 +78,25 @@ export default function Dropdown({
         onClick={handleToggle}
         className={`
           flex justify-between items-center gap-1 w-full ${
-            bgColor ? bgColor : "bg-white"
+            bgColor ? bgColor : 'bg-white'
           } py-[14px] px-5 rounded-sm text-secondary transition border
           ${
             disabled
-              ? "cursor-not-allowed bg-gray-100 text-gray-500 border-gray-300"
-              : "cursor-pointer border-[#E4E4E7]"
+              ? 'cursor-not-allowed bg-gray-100 text-gray-500 border-gray-300'
+              : 'cursor-pointer border-[#E4E4E7]'
           }
           ${className}
         `}
       >
         <span className={`font-normal text-secondarytext ${defaultTextColor}`}>
           {selected?.name ||
-            (typeof defaultValue === "string"
-              ? defaultValue
-              : defaultValue?.name) ||
-            "Select"}
+            (typeof defaultValue === 'string' ? defaultValue : defaultValue?.name) ||
+            'Select'}
         </span>
         <ChevronDown
-          className={`text-sm md:text-base transition-transform duration-200 
-            ${open ? "rotate-180" : ""} 
-            ${bgColor ? "text-white" : iconColor || "text-secondarytext"}
+          className={`absolute right-0.5  text-sm md:text-base transition-transform duration-200 
+            ${open ? 'rotate-180' : ''} 
+            ${bgColor ? 'text-white' : iconColor || 'text-secondarytext'}
           `}
         />
       </div>
@@ -114,9 +108,7 @@ export default function Dropdown({
           <div
             className="absolute z-[9999] bg-white border border-[#E4E4E7] rounded-md shadow-lg max-h-60 overflow-auto"
             style={{
-              top:
-                dropdownRef.current.getBoundingClientRect().bottom +
-                window.scrollY,
+              top: dropdownRef.current.getBoundingClientRect().bottom + window.scrollY,
               left: dropdownRef.current.getBoundingClientRect().left,
               width: dropdownRef.current.offsetWidth,
             }}
@@ -146,18 +138,14 @@ export default function Dropdown({
                     className={`
                       px-4 py-2 cursor-pointer text-xs md:text-sm text-secondary
                       hover:bg-gray-100
-                      ${
-                        selected?.id === opt.id ? "bg-gray-100 font-medium" : ""
-                      }
+                      ${selected?.id === opt.id ? 'bg-gray-100 font-medium' : ''}
                     `}
                   >
                     {opt.name}
                   </li>
                 ))
               ) : (
-                <li className="px-4 py-2 text-xs md:text-sm text-gray-500">
-                  No options found
-                </li>
+                <li className="px-4 py-2 text-xs md:text-sm text-gray-500">No options found</li>
               )}
             </ul>
           </div>,

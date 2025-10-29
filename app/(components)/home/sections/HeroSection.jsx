@@ -123,18 +123,18 @@ export default function HeroSection() {
               <Dropdown width={'w-full'} defaultValue="Deadline" />
             </div>
             <div className="w-full ">
-              <Dropdown width={'w-full'} defaultValue="App fee" />
+              <Dropdown width={'w-full'} defaultValue="App " />
             </div>
             <div className="w-full ">
-              <Dropdown width={'w-full'} defaultValue="Tuition fee" />
+              <Dropdown width={'w-full'} defaultValue="Tuition " />
             </div>
             <div className="w-full ">
               <Button
                 text="Clear Filter"
-                icon={<SlidersHorizontal className="text-white" />}
+                icon={<SlidersHorizontal className="text-white block  sm:hidden lg:block" />}
                 color="text-white"
                 bg="bg-[#ACACAC]"
-                cn="!w-full !py-3.5"
+                cn="!w-full !py-3.5 truncate"
               />
             </div>
           </div>

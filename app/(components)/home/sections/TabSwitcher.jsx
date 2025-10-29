@@ -12,7 +12,7 @@ export default function TabSwitcher({ tabs }) {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={` py-3.5 rounded-md  w-[124px]  font-semibold border-2 cursor-pointer uppercase transition-all duration-200 ${
+            className={` py-3.5 rounded-md  w-[124px]  font-semibold border md:border-2 cursor-pointer uppercase transition-all duration-200 ${
               activeTab === tab
                 ? 'bg-primarycolor text-white border-[#c8004b]'
                 : 'text-[#c8004b] border-[#c8004b] hover:bg-[#c8004b]/10'
