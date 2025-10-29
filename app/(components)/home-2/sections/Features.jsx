@@ -24,7 +24,7 @@ const Features = () => {
     <section className="py-[100px] px-4 max-w-[1440px] mx-auto flex flex-col gap-10">
       <div className="max-w-[500px] text-center mx-auto flex flex-col gap-3">
         <h5 className="text-[var(--bg-primary-color)] text-sm font-semibold tracking-wide">Features</h5>
-        <h3 className="text-3xl font-bold text-Primarytext">What You Gain</h3>
+        <h3 className="text-5xl font-bold text-Primarytext">What You Gain</h3>
         <p className="text-Lighttext text-base">
           Unlock expert support, smooth applications, and career-focused guidance — all in one place with Get2Uni.
         </p>

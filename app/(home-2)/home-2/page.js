@@ -1,5 +1,6 @@
 "use client";
 
+import ExploreUni from "@/app/(components)/home-2/sections/ExploreUni";
 import Features from "@/app/(components)/home-2/sections/Features";
 import Hero from "@/app/(components)/home-2/sections/Hero";
 import SuccessSection from "@/app/(components)/home-2/sections/SuccessSection";
@@ -13,6 +14,7 @@ const Page = () => {
       <Hero />
       <Features />
       <SuccessSection />
+      <ExploreUni />
       <WhatNext />
       <UniDreams />
     </>
