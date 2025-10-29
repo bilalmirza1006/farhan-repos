@@ -73,7 +73,7 @@ const Home2Header = () => {
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full min-h-screen">
           {/* Mobile Header */}
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
             <img src="/logo.png" alt="Logo" className="h-8" />
@@ -83,7 +83,7 @@ const Home2Header = () => {
           </div>
 
           {/* Mobile Navigation Links */}
-          <nav className="flex flex-col px-6 py-6 space-y-1 flex-grow">
+          <nav className="flex flex-col px-6 py-6 space-y-1 flex-grow bg-white">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -97,7 +97,7 @@ const Home2Header = () => {
           </nav>
 
           {/* Mobile Buttons */}
-          <div className="flex flex-col gap-3 px-6 py-6 border-t border-gray-100">
+          <div className="flex flex-col gap-3 px-6 py-6 border-t border-gray-100 bg-white">
             {/* Login Button - Mobile */}
             <button
               className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg font-medium text-sm text-gray-900 transition-all duration-200"

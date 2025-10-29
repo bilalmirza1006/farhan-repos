@@ -309,6 +309,7 @@
 /* ///////// */
 
 .success-card-wrapper {
+ @media (min-width: 1024px) {
   article:first-child {
     transform: rotate(-2deg) translateY(10px);
   }
@@ -318,6 +319,7 @@
   article:last-child {
     transform: rotate(2deg) translateY(10px);
   }
+ }
 
   .img-wrap {
     position: relative;
