@@ -49,7 +49,6 @@ const ExploreUni = () => {
 
     if (!sections.length || !images.length) return;
 
-    // Initially hide all images except the first one
     images.forEach((img, index) => {
       if (index === 0) {
         gsap.set(img, { opacity: 1, y: 0 });
@@ -151,7 +150,7 @@ const ExploreUni = () => {
               ref={(el) => (sectionRefs.current[index] = el)}
               className={`max-w-[500px] flex flex-col gap-4 min-h-[300px] ${index === 0 ? "mt-[150px]" : ""}`}
             >
-              <h4 className="text-4xl font-bold text-[var(--heading)]">{item.title}</h4>
+              <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--heading)]">{item.title}</h4>
               <p className="text-Lighttext text-base">{item.description}</p>
             </div>
           ))}
