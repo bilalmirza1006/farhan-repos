@@ -5,9 +5,9 @@ import { Home, Info, LogIn, Menu, MessageCircle, X } from 'lucide-react';
 import Button from '../ui/Button';
 import { useState } from 'react';
 import Link from 'next/link';
-
+// import { X } from 'lucide-react';
 // import { Button } from "@/app/(components)/ui/Button";
-
+// import { X } from 'lucide-react';
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
@@ -77,12 +77,15 @@ export const Header = () => {
 
       {/* Slide-in Mobile Menu (from left) */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-50 ${
+        className={`fixed top-0 left-0 h-full w-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-50 ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="flex justify-between items-center px-4 py-4 border-b border-gray-200">
           <img src="/home/logo.png" alt="Logo" className="h-8" />
+          <div>
+            <X onClick={() => setMenuOpen(false)} />
+          </div>
         </div>
 
         <nav className="flex flex-col gap-4 mt-5 ">

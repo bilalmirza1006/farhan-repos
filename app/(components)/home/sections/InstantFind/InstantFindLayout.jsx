@@ -23,8 +23,15 @@ const InstantFindLayout = () => {
   const [activeFilterTab, setActiveFilterTab] = useState('Program');
   const [selectedFilters, setSelectedFilters] = useState([]);
 
-  const openModalHandler = () => setModal(true);
-  const closeModalHandler = () => setModal(false);
+  const openModalHandler = () => {
+    setModal(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModalHandler = () => {
+    setModal(false);
+    document.body.style.overflow = 'auto';
+  };
 
   const options = [
     { id: 1, label: 'USA' },

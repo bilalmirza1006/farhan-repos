@@ -76,8 +76,15 @@ const UniversityGrid = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilters, setSelectedFilters] = useState([]);
 
-  const openModalHandler = () => setModal(true);
-  const closeModalHandler = () => setModal(false);
+  const openModalHandler = () => {
+    setModal(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModalHandler = () => {
+    setModal(false);
+    document.body.style.overflow = 'auto';
+  };
 
   const filterTabs = ['University', 'Country'];
   const filterOptions = {

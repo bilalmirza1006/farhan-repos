@@ -90,17 +90,17 @@ const page = async ({ params }) => {
             <div className="absolute top-6 left-6">
               <Button text={'View All Programs'} />
             </div>
-            <div className="absolute md:top-80 top-50 left-0 w-full flex flex-wrap md:justify-end justify-center px-6 gap-2.5">
-              <div className="px-5 py-3  font-medium text-primaryheading text-base md:text-lg bg-white rounded-md">
+            <div className="absolute md:top-80 top-70 left-0 w-full flex flex-wrap md:justify-end justify-center px-6 gap-2.5">
+              <div className="px-3 py-2 font-inter font-medium text-primaryheading text-xs md:text-base lg:text:lg  bg-white rounded-md">
                 MSE
               </div>
-              <div className="px-5 py-3  font-medium text-primaryheading text-base md:text-lg bg-white rounded-md">
+              <div className="px-3 py-2 font-inter font-medium text-primaryheading text-xs md:text-base lg:text:lg bg-white rounded-md">
                 COMPUTER SCIENCE
               </div>
-              <div className="px-5 py-3  font-medium text-primaryheading text-base md:text-lg bg-white rounded-md">
+              <div className="px-3 py-2 font-inter font-medium text-primaryheading text-xs md:text-base lg:text:lg bg-white rounded-md">
                 {university.deadline}
               </div>
-              <div className="px-5 py-3  font-medium text-[#C7044C] text-base md:text-lg bg-white rounded-md">
+              <div className="px-3 py-2 font-inter font-medium text-[#C7044C] text-xs md:text-base lg:text:lg bg-white rounded-md">
                 {university.daysLeft}
               </div>
             </div>

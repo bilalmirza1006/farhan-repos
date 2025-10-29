@@ -1,130 +1,124 @@
-"use client";
-import Dropdown from "@/app/(components)/ui/Dropdown";
-import FilterBar from "@/app/(components)/ui/Filterbar";
-import Modal from "@/app/(components)/ui/Modal";
-import UniversityDetailCard from "./UniversityDetailCard";
-import {
-  Globe,
-  Calendar,
-  Search,
-  SlidersHorizontal,
-  BookOpen,
-} from "lucide-react";
-import React, { useState } from "react";
+'use client';
+import Dropdown from '@/app/(components)/ui/Dropdown';
+import FilterBar from '@/app/(components)/ui/Filterbar';
+import Modal from '@/app/(components)/ui/Modal';
+import UniversityDetailCard from './UniversityDetailCard';
+import { Globe, Calendar, Search, SlidersHorizontal, BookOpen } from 'lucide-react';
+import React, { useState } from 'react';
 
 const UniversitiesGridTab = ({ data }) => {
-  const [activeTab, setActiveTab] = useState("Universities");
+  const [activeTab, setActiveTab] = useState('Universities');
   const [modal, setModal] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [activeFilterTab, setActiveFilterTab] = useState("Intake batch");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeFilterTab, setActiveFilterTab] = useState('Intake batch');
   const [selectedFilters, setSelectedFilters] = useState([]);
 
-  const openModalHandler = () => setModal(true);
-  const closeModalHandler = () => setModal(false);
+  const openModalHandler = () => {
+    setModal(true);
+    document.body.style.overflow = 'hidden';
+  };
 
-  const filterTabs = ["Program", "Intake batch", "Country"];
+  const closeModalHandler = () => {
+    setModal(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  const filterTabs = ['Program', 'Intake batch', 'Country'];
 
   const filterOptions = {
     Program: [
-      { id: 1, label: "Computer Science" },
-      { id: 2, label: "Business Analytics" },
-      { id: 3, label: "Data Science" },
-      { id: 4, label: "Engineering" },
-      { id: 5, label: "Marketing" },
-      { id: 6, label: "AI & Robotics" },
+      { id: 1, label: 'Computer Science' },
+      { id: 2, label: 'Business Analytics' },
+      { id: 3, label: 'Data Science' },
+      { id: 4, label: 'Engineering' },
+      { id: 5, label: 'Marketing' },
+      { id: 6, label: 'AI & Robotics' },
     ],
-    "Intake batch": [
-      { id: 1, label: "Fall" },
-      { id: 2, label: "Winter" },
-      { id: 3, label: "Spring" },
-      { id: 4, label: "Summer" },
-      { id: 5, label: "January" },
-      { id: 6, label: "February" },
-      { id: 7, label: "March" },
-      { id: 8, label: "April" },
-      { id: 9, label: "May" },
-      { id: 10, label: "June" },
-      { id: 11, label: "July" },
-      { id: 12, label: "August" },
-      { id: 13, label: "September" },
-      { id: 14, label: "October" },
-      { id: 15, label: "November" },
-      { id: 16, label: "December" },
+    'Intake batch': [
+      { id: 1, label: 'Fall' },
+      { id: 2, label: 'Winter' },
+      { id: 3, label: 'Spring' },
+      { id: 4, label: 'Summer' },
+      { id: 5, label: 'January' },
+      { id: 6, label: 'February' },
+      { id: 7, label: 'March' },
+      { id: 8, label: 'April' },
+      { id: 9, label: 'May' },
+      { id: 10, label: 'June' },
+      { id: 11, label: 'July' },
+      { id: 12, label: 'August' },
+      { id: 13, label: 'September' },
+      { id: 14, label: 'October' },
+      { id: 15, label: 'November' },
+      { id: 16, label: 'December' },
     ],
     Country: [
-      { id: 1, label: "United States" },
-      { id: 2, label: "United Kingdom" },
-      { id: 3, label: "Canada" },
-      { id: 4, label: "Germany" },
-      { id: 5, label: "France" },
-      { id: 6, label: "Australia" },
-      { id: 7, label: "New Zealand" },
+      { id: 1, label: 'United States' },
+      { id: 2, label: 'United Kingdom' },
+      { id: 3, label: 'Canada' },
+      { id: 4, label: 'Germany' },
+      { id: 5, label: 'France' },
+      { id: 6, label: 'Australia' },
+      { id: 7, label: 'New Zealand' },
     ],
   };
 
   const toggleFilter = (label) => {
     setSelectedFilters((prev) =>
-      prev.includes(label)
-        ? prev.filter((item) => item !== label)
-        : [...prev, label]
+      prev.includes(label) ? prev.filter((item) => item !== label) : [...prev, label]
     );
   };
 
   const universities = [
     {
-      name: "UNIVERSITY OF NEW HAVEN",
-      program: "MS Computer Science",
-      locations:
-        "Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI",
-      tuition: "$1890/yr",
-      applicationFee: "$76",
-      deposit: "$200",
-      startDate: "Full 01 May / 309 days",
-      image: "/images/university1.png",
+      name: 'UNIVERSITY OF NEW HAVEN',
+      program: 'MS Computer Science',
+      locations: 'Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI',
+      tuition: '$1890/yr',
+      applicationFee: '$76',
+      deposit: '$200',
+      startDate: 'Full 01 May / 309 days',
+      image: '/images/university1.png',
     },
     {
-      name: "UNIVERSITY OF NEW SOUTH ASIA",
-      program: "MS Computer Science",
-      locations:
-        "Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI",
-      tuition: "$1890/yr",
-      applicationFee: "$76",
-      deposit: "$200",
-      startDate: "Full 01 May / 309 days",
-      image: "/images/university1.png",
+      name: 'UNIVERSITY OF NEW SOUTH ASIA',
+      program: 'MS Computer Science',
+      locations: 'Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI',
+      tuition: '$1890/yr',
+      applicationFee: '$76',
+      deposit: '$200',
+      startDate: 'Full 01 May / 309 days',
+      image: '/images/university1.png',
     },
     {
-      name: "UNIVERSITY OF NEW HAVEN",
-      program: "MS Computer Science",
-      locations:
-        "Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI",
-      tuition: "$1890/yr",
-      applicationFee: "$76",
-      deposit: "$200",
-      startDate: "Full 01 May / 309 days",
-      image: "/images/university1.png",
+      name: 'UNIVERSITY OF NEW HAVEN',
+      program: 'MS Computer Science',
+      locations: 'Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI',
+      tuition: '$1890/yr',
+      applicationFee: '$76',
+      deposit: '$200',
+      startDate: 'Full 01 May / 309 days',
+      image: '/images/university1.png',
     },
     {
-      name: "UNIVERSITY OF SOUTHERN ASIA",
-      program: "MS Computer Science",
-      locations:
-        "Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI",
-      tuition: "$1890/yr",
-      applicationFee: "$76",
-      deposit: "$200",
-      startDate: "Full 01 May / 309 days",
-      image: "/images/university1.png",
+      name: 'UNIVERSITY OF SOUTHERN ASIA',
+      program: 'MS Computer Science',
+      locations: 'Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI',
+      tuition: '$1890/yr',
+      applicationFee: '$76',
+      deposit: '$200',
+      startDate: 'Full 01 May / 309 days',
+      image: '/images/university1.png',
     },
     {
-      name: "UNIVERSITY OF NEW HAVEN",
-      program: "MS Computer Science",
-      locations:
-        "Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI",
-      tuition: "$1890/yr",
-      applicationFee: "$76",
-      deposit: "$200",
-      startDate: "Full 01 May / 309 days",
-      image: "/images/university1.png",
+      name: 'UNIVERSITY OF NEW HAVEN',
+      program: 'MS Computer Science',
+      locations: 'Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI',
+      tuition: '$1890/yr',
+      applicationFee: '$76',
+      deposit: '$200',
+      startDate: 'Full 01 May / 309 days',
+      image: '/images/university1.png',
     },
   ];
 
@@ -133,8 +127,7 @@ const UniversitiesGridTab = ({ data }) => {
       {/* Header */}
       <div className="w-full bg-white drop-shadow-sm max-h-16 py-3 px-6 flex items-center justify-between ">
         <div className="font-semibold font-inter text-xl text-Primarytext">
-          We Found{" "}
-          <span className="text-[#C7044C]">{data.length} Universities</span>
+          We Found <span className="text-[#C7044C]">{data.length} Universities</span>
         </div>
 
         {/* Mobile Filter Button */}
@@ -148,14 +141,14 @@ const UniversitiesGridTab = ({ data }) => {
         {/* Tabs + Dropdown (Desktop) */}
         <div className="hidden md:flex gap-5">
           <div className="flex bg-[#F0F0F0B2] rounded-[5.4px] p-1">
-            {["Universities", "Scholarship"].map((tab) => (
+            {['Universities', 'Scholarship'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-4 py-2 rounded-md text-sm cursor-pointer font-inter font-medium transition-all duration-200 ${
                   activeTab === tab
-                    ? "bg-white shadow text-black font-semibold"
-                    : "text-gray-500 hover:text-gray-700"
+                    ? 'bg-white shadow text-black font-semibold'
+                    : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
                 {tab}
@@ -164,8 +157,8 @@ const UniversitiesGridTab = ({ data }) => {
           </div>
           <Dropdown
             defaultTextColor="!text-white"
-            defaultValue={"Master"}
-            iconColor={"white"}
+            defaultValue={'Master'}
+            iconColor={'white'}
             className="!py-2 bg-primarycolor !text-white"
           />
         </div>
@@ -173,15 +166,11 @@ const UniversitiesGridTab = ({ data }) => {
 
       {/* Filter Bars (Desktop) */}
       <div className="hidden md:flex">
-        <FilterBar
-          options={filterOptions.Country}
-          placeholder="Search Country"
-          icon={Globe}
-        />
+        <FilterBar options={filterOptions.Country} placeholder="Search Country" icon={Globe} />
       </div>
       <div className="hidden md:flex">
         <FilterBar
-          options={filterOptions["Intake batch"]}
+          options={filterOptions['Intake batch']}
           placeholder="Search Intake Batch"
           icon={Calendar}
         />
@@ -204,9 +193,7 @@ const UniversitiesGridTab = ({ data }) => {
         >
           <div className="space-y-5">
             {/* Subtitle */}
-            <p className="text-gray-500 text-sm flex">
-              Apply filters to narrow your results
-            </p>
+            <p className="text-gray-500 text-sm flex">Apply filters to narrow your results</p>
 
             {/* Dropdowns */}
             <div className="grid grid-cols-2 gap-2">
@@ -216,12 +203,7 @@ const UniversitiesGridTab = ({ data }) => {
                 width="w-full"
                 className="!py-2"
               />
-              <Dropdown
-                title="Type"
-                defaultValue="Scholarship"
-                width="w-full"
-                className="!py-2"
-              />
+              <Dropdown title="Type" defaultValue="Scholarship" width="w-full" className="!py-2" />
             </div>
 
             {/* Tabs */}
@@ -232,8 +214,8 @@ const UniversitiesGridTab = ({ data }) => {
                   onClick={() => setActiveFilterTab(tab)}
                   className={`w-1/3 text-sm py-2 rounded-md transition font-medium ${
                     activeFilterTab === tab
-                      ? "bg-[#C7044C] text-white"
-                      : "text-gray-700 hover:bg-gray-100"
+                      ? 'bg-[#C7044C] text-white'
+                      : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
                   {tab}
@@ -255,22 +237,20 @@ const UniversitiesGridTab = ({ data }) => {
             {/* Dynamic Filter Buttons */}
             <div className="flex flex-wrap gap-2">
               {filterOptions[activeFilterTab]
-                .filter((opt) =>
-                  opt.label.toLowerCase().includes(searchTerm.toLowerCase())
-                )
+                .filter((opt) => opt.label.toLowerCase().includes(searchTerm.toLowerCase()))
                 .map((option) => (
                   <button
                     key={option.id}
                     onClick={() => toggleFilter(option.label)}
                     className={`flex items-center gap-2 border rounded-md px-4 py-2 text-sm transition ${
                       selectedFilters.includes(option.label)
-                        ? "bg-[#C7044C] text-white border-[#C7044C]"
-                        : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
+                        ? 'bg-[#C7044C] text-white border-[#C7044C]'
+                        : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'
                     }`}
                   >
-                    {activeFilterTab === "Intake batch" ? (
+                    {activeFilterTab === 'Intake batch' ? (
                       <Calendar className="w-4 h-4" />
-                    ) : activeFilterTab === "Country" ? (
+                    ) : activeFilterTab === 'Country' ? (
                       <Globe className="w-4 h-4" />
                     ) : (
                       <BookOpen className="w-4 h-4" />
