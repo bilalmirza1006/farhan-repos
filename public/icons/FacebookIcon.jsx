@@ -6,7 +6,7 @@ export const FacebookIcon = () => {
       <foreignObject x="-13.6" y="-13.6" width="63.2" height="63.2">
         <div
           xmlns="http://www.w3.org/1999/xhtml"
-          style="backdrop-filter:blur(6.8px);clip-path:url(#bgblur_0_2_2291_clip_path);height:100%;width:100%"
+          //   style="backdrop-filter:blur(6.8px);clip-path:url(#bgblur_0_2_2291_clip_path);height:100%;width:100%"
         ></div>
       </foreignObject>
       <g data-figma-bg-blur-radius="13.6">
