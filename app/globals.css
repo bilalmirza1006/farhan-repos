@@ -142,8 +142,8 @@
   }
 } */
 /* ////////////////////////////////////////////// */
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -163,7 +163,7 @@
 
 /* === Global Theme Variables === */
 :root {
-  --font-roboto: 'Roboto', sans-serif;
+  --font-roboto: "Roboto", sans-serif;
   /* Base radius */
   --radius: 0.625rem;
 
@@ -307,3 +307,33 @@
 }
 
 /* ///////// */
+
+.success-card-wrapper {
+  article {
+    transition: all 0.5s ease-in-out;
+  }
+  article:first-child {
+    transform: rotate(-2deg) translateY(10px);
+  }
+  article:nth-child(2) {
+    z-index: 2;
+  }
+  article:last-child {
+    transform: rotate(2deg) translateY(10px);
+  }
+  .img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      inset: 0;
+      background-color: #000;
+      opacity: 0.3;
+      z-index: 1;
+    }
+  }
+}
