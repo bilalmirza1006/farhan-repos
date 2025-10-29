@@ -23,22 +23,26 @@ const ExploreUni = () => {
   const contentData = [
     {
       title: "Explore & Apply",
-      description: "Find the right university for you, connect with experts, and submit your application — all in one place.",
+      description:
+        "Discover universities that truly match your goals, interests, and strengths. Browse detailed program information, compare opportunities, connect directly with institutions, and submit your application seamlessly — all in one centralized platform built to make the process stress-free.",
       image: Img1,
     },
     {
       title: "Chat with Experts",
-      description: "Get personalized guidance from education experts who understand your goals and help you make the right choices.",
+      description:
+        "Get personalized, one-on-one support from experienced education advisors who understand your ambitions. They’ll help you shortlist universities, refine your application, and guide you through each stage — ensuring every decision you make is confident and well-informed.",
       image: Img2,
     },
     {
       title: "Track Your Progress",
-      description: "Monitor your application status in real-time and stay updated with every step of your admission journey.",
+      description:
+        "Stay in control of your journey with real-time updates and progress tracking. Instantly see where your application stands, what documents are pending, and what steps come next — giving you full visibility and peace of mind throughout your admission process.",
       image: Img3,
     },
     {
       title: "Secure Admission",
-      description: "Complete your enrollment process smoothly with our streamlined system and start your academic journey.",
+      description:
+        "Finalize your enrollment effortlessly with our guided system. From document verification to offer acceptance, every step is streamlined to help you transition smoothly into your new academic life and begin your university journey with confidence.",
       image: Img4,
     },
   ];
@@ -125,7 +129,7 @@ const ExploreUni = () => {
               }
             });
           },
-          // markers: true, // Uncomment for debugging
+          // markers: true,
         });
       });
     }, containerRef);
