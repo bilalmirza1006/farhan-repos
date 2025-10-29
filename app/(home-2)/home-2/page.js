@@ -4,6 +4,7 @@ import Features from "@/app/(components)/home-2/sections/Features";
 import Hero from "@/app/(components)/home-2/sections/Hero";
 import SuccessSection from "@/app/(components)/home-2/sections/SuccessSection";
 import UniDreams from "@/app/(components)/home-2/sections/UniDreams";
+import WhatNext from "@/app/(components)/home-2/sections/WhatNext";
 import React from "react";
 
 const Page = () => {
@@ -12,6 +13,7 @@ const Page = () => {
       <Hero />
       <Features />
       <SuccessSection />
+      <WhatNext />
       <UniDreams />
     </>
   );
