@@ -158,7 +158,7 @@ const ExploreUni = () => {
 
         <div className="relative flex-1 sticky top-32 h-[600px] flex items-center justify-center">
           <img src={BG.src} className="absolute inset-0 w-full h-full object-contain" alt="" />
-          <div className="relative w-full max-w-[400px] h-[600px]">
+          <div className="relative w-full max-w-[400px] h-[400px] md:h-[600px]">
             {contentData.map((item, index) => (
               <img
                 key={index}
