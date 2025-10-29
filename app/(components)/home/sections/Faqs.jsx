@@ -65,7 +65,7 @@ export default function FaqSection() {
       </div>
 
       {/* FAQ Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 mx-5">
         {/* Left Column */}
         <div className="lg:col-span-1 flex flex-col gap-4">
           {faqs.slice(0, 2).map((faq, index) => (
@@ -99,7 +99,7 @@ export default function FaqSection() {
       </div>
 
       {/* CTA Banner */}
-      <div className="my-16 bg-[#c8004b] text-white rounded-[4px] px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1560px] mx-auto shadow-md">
+      <div className="my-16 mx-5 bg-[#c8004b] text-white rounded-[4px] px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1560px] shadow-md">
         <div>
           <h3 className="text-3xl font-bold mb-2">Explore. Apply. Achieve. All in One Place</h3>
           <p className="font-medium text-white/90 text-xl max-w-xl">

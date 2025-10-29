@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Header } from "../(components)/layout/Header";
-import { Footer } from "../(components)/layout/Footer";
+import { Header } from '../(components)/layout/Header';
+import { Footer } from '../(components)/layout/Footer';
 
 /**
  * Main Site Layout
@@ -17,4 +17,3 @@ export default function MainSiteLayout({ children }) {
     </div>
   );
 }
-

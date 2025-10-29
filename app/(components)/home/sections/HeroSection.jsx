@@ -64,7 +64,7 @@ export default function HeroSection() {
         aria-hidden="true"
       ></div>
 
-      <div className="relative max-w-7xl  mx-auto text-center">
+      <div className="relative max-w-7xl   text-center mx-7">
         {/* Heading */}
         <h1 className="text-3xl md:text-[44px] font-semibold text-primaryheading">
           <BlurText
@@ -103,7 +103,7 @@ export default function HeroSection() {
           threshold={0.2} // when to trigger
           delay={0}
         >
-          <div className="mt-10 w-full ">
+          <div className="mt-10 w-full  ">
             <SearchBar onSearch={handleSearch} />
           </div>
 

@@ -1,7 +1,5 @@
 'use client';
 
-// export const runtime = 'edge';
-
 import ProgramsListLayout from '@/app/(components)/home/sections/CountriesLaout/ProgramsListLayout';
 import Button from '@/app/(components)/ui/Button';
 import BacklogsIcon from '@/public/home/BacklogsIcon';
@@ -78,12 +76,12 @@ const page = async ({ params }) => {
       {universities.map((university) => (
         <div
           key={university.id}
-          className="bg-white rounded-md drop-shadow-md overflow-hidden p-6 mb-10"
+          className="bg-white rounded-md drop-shadow-md overflow-hidden p-6 mx-5 mb-10"
         >
           {/* ===== Banner Section ===== */}
           <div className="relative">
             <Image
-              src={university.image}
+              src={'/home/new.jpg'}
               alt={university.name}
               width={1200}
               height={400}
@@ -92,46 +90,50 @@ const page = async ({ params }) => {
             <div className="absolute top-6 left-6">
               <Button text={'View All Programs'} />
             </div>
-            <div className="absolute md:top-80 top-60 left-0 w-full flex flex-wrap md:justify-end justify-center px-6 gap-2.5">
-              <div className="px-5 py-3 font-inter font-medium text-primaryheading text-lg bg-[#F2F2F266] rounded-md">
+            <div className="absolute md:top-80 top-50 left-0 w-full flex flex-wrap md:justify-end justify-center px-6 gap-2.5">
+              <div className="px-5 py-3  font-medium text-primaryheading text-base md:text-lg bg-white rounded-md">
                 MSE
               </div>
-              <div className="px-5 py-3 font-inter font-medium text-primaryheading text-lg bg-[#F2F2F266] rounded-md">
+              <div className="px-5 py-3  font-medium text-primaryheading text-base md:text-lg bg-white rounded-md">
                 COMPUTER SCIENCE
               </div>
-              <div className="px-5 py-3 font-inter font-medium text-primaryheading text-lg bg-[#F2F2F266] rounded-md">
+              <div className="px-5 py-3  font-medium text-primaryheading text-base md:text-lg bg-white rounded-md">
                 {university.deadline}
               </div>
-              <div className="px-5 py-3 font-inter font-medium text-[#C7044C] text-lg bg-[#F2F2F266] rounded-md">
+              <div className="px-5 py-3  font-medium text-[#C7044C] text-base md:text-lg bg-white rounded-md">
                 {university.daysLeft}
               </div>
             </div>
           </div>
 
           {/* ===== University Info ===== */}
-          <div className="mt-4.5 rounded-md flex justify-between">
-            <div className="space-y-2.5">
+          <div className="mt-4.5 rounded-md gap-5 md:gap-0 flex flex-col lg:flex-row md:justify-between">
+            <div className="w-full space-y-2.5">
               <h2 className="text-2xl font-bold text-primarycolor font-inter uppercase">
                 {university.name}
               </h2>
               <p className="text-lg font-inter font-medium text-primaryheading ">
                 {university.locations}
               </p>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-lg">
-                <div className="space-y-2.5">
+
+              <div className="  gap-4 text-lg">
+                <div className="space-y-2.5 w-full ">
                   <p className="font-medium text-primaryheading">
                     Tuition Fee: {university.tuition}
                   </p>
-                  <p className="text-primaryheading">
-                    Application Fee: {university.applicationFee}{' '}
-                    <span className="bg-[#190459] text-white text-xs px-2 py-[4px] rounded-sm ml-1">
+                  <p className="text-primaryheading w-full  flex-row flex items-center justify-between lg:justify-start ">
+                    Application Fee: {university.applicationFee}
+                    <span className="bg-[#190459] lg:ml-10 text-white text-xs px-2 py-[4px] rounded-sm ml-1">
                       Discount code
                     </span>
                   </p>
-                  <p className="mt-1 text-primaryheading">
-                    Scholarships:{' '}
-                    <span className="text-success font-semibold">
-                      {university.scholarships} ({university.scholarshipAmount})
+                  <p className="mt-1 flex items-center text-primaryheading">
+                    Scholarships:
+                    <span className="flex items-center flex-row">
+                      {university.scholarships}
+                      <div className="px-2 py-1 rounded-lg bg-success ml-10">
+                        ({university.scholarshipAmount})
+                      </div>
                     </span>
                   </p>
                 </div>
@@ -139,7 +141,7 @@ const page = async ({ params }) => {
             </div>
 
             {/* Test Scores */}
-            <div className="bg-[#F2F2F266] rounded-[12px] p-3 text-[#190459] text-sm font-medium min-w-[532px]">
+            <div className="bg-[#F2F2F266] rounded-[12px] p-3 text-[#190459] text-sm font-medium w-full  lg:min-w-[532px]">
               {/* First Row */}
               <div className="grid grid-cols-4 divide-x divide-gray-200 text-center pb-3 border-b border-gray-200">
                 <div>
@@ -194,16 +196,16 @@ const page = async ({ params }) => {
                     {university.USNewsRank}
                   </p>
                 </div>
-                <div className="flex border-b-2 justify-between space-y-2 font-normal">
-                  <p className="flex items-center gap-1">
+                <div className="grid grid-cols-2 lg:grid-cols-3 border-b-2  space-y-2 font-normal">
+                  <p className="flex items-center gap-1 ">
                     <PrivateIcon />
                     <span className="font-semibold text-[#190459]">Type:</span> {university.Type}
                   </p>
-                  <p className="flex items-center gap-1">
+                  <p className="flex items-center justify-end lg:justify-center gap-1 ">
                     <GreIcon />
                     <span className="font-semibold text-[#190459]">GRE:</span> {university.GRE}
                   </p>
-                  <p className="flex items-center gap-1">
+                  <p className="flex items-center lg:justify-end gap-1 ">
                     <CreditsIcon />
                     <span className="font-semibold text-[#190459]">Credits:</span>{' '}
                     {university.Credits}
@@ -215,7 +217,7 @@ const page = async ({ params }) => {
         </div>
       ))}
 
-      <div>
+      <div className="mx-5">
         <ProgramsListLayout />
       </div>
     </section>

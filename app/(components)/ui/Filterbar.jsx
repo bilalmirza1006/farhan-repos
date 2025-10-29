@@ -1,26 +1,41 @@
-"use client";
+'use client';
 
-import { useState, useRef } from "react";
-import { Search, X, ChevronDown } from "lucide-react";
-import { createPortal } from "react-dom";
+import { useState, useRef, useEffect } from 'react';
+import { Search, X, ChevronDown } from 'lucide-react';
+import { createPortal } from 'react-dom';
 
-/**
- * A reusable filter bar component
- *
- * @param {Array} options - The filter options [{ id, label, count }]
- * @param {String} placeholder - Placeholder text for search input
- * @param {Function} onFilterChange - Callback that returns selected filters
- * @param {ReactNode} icon - Optional icon to display inside selected filter tags
- */
 export default function FilterBar({
   options = [],
-  placeholder = "Search...",
+  placeholder = 'Search...',
   onFilterChange,
-  icon: IconComponent, // optional icon component (e.g., BrainCircuit)
+  icon: IconComponent,
 }) {
   const [filters, setFilters] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const buttonRef = useRef(null);
+  const dropdownRef = useRef(null);
+
+  // ✅ Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target) &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target)
+      ) {
+        setDropdownOpen(false);
+      }
+    };
+
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [dropdownOpen]);
 
   const toggleFilter = (option) => {
     let updatedFilters;
@@ -77,7 +92,7 @@ export default function FilterBar({
           <button
             ref={buttonRef}
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center gap-1 text-secondarycolor px-2 py-1 rounded-md text-xs md:text-sm hover:bg-gray-100"
+            className="flex items-center gap-1  text-secondarycolor px-2 py-1 rounded-md text-xs md:text-sm hover:bg-gray-100"
           >
             <ChevronDown className="w-4 h-4" />
           </button>
@@ -86,21 +101,17 @@ export default function FilterBar({
             buttonRef.current &&
             (() => {
               const rect = buttonRef.current.getBoundingClientRect();
-              const dropdownWidth = Math.max(rect.width, 224); // minimum width
-              const viewportWidth = window.innerWidth;
-              const spaceRight = viewportWidth - rect.left;
-
-              const left =
-                spaceRight < dropdownWidth
-                  ? rect.right - dropdownWidth // align to button's right edge
-                  : rect.left; // normal left alignment
+              const dropdownWidth = Math.max(rect.width, 224);
+              const left = rect.left - dropdownWidth; // Left side of button
 
               return createPortal(
                 <div
-                  className="bg-white border border-gray-200 rounded-md shadow-md max-h-60 overflow-auto"
+                  ref={dropdownRef} // ✅ Added ref for outside click detection
+                  className="bg-white border  border-gray-200 rounded-md shadow-md max-h-60 overflow-auto"
                   style={{
-                    position: "absolute",
-                    top: rect.bottom + window.scrollY,
+                    position: 'absolute',
+                    // top: rect.bottom + window.scrollY,
+                    top: rect.bottom + window.scrollY + 10,
                     left: left,
                     width: dropdownWidth,
                     zIndex: 9999,
@@ -113,16 +124,12 @@ export default function FilterBar({
                         key={option.id}
                         onClick={() => toggleFilter(option)}
                         className={`flex justify-between items-center w-full px-3 py-2 text-sm hover:bg-gray-100 ${
-                          selected
-                            ? "text-[#C8102E] font-semibold"
-                            : "text-gray-700"
+                          selected ? 'text-[#C8102E] font-semibold' : 'text-gray-700'
                         }`}
                       >
                         {option.label}
                         {option.count && (
-                          <span className="text-xs text-gray-400">
-                            {option.count}
-                          </span>
+                          <span className="text-xs text-gray-400">{option.count}</span>
                         )}
                       </button>
                     );

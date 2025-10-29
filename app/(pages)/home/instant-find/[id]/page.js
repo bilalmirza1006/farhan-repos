@@ -80,12 +80,12 @@ const page = ({ params }) => {
       {universities.map((university) => (
         <div
           key={university.id}
-          className="bg-white rounded-md drop-shadow-md overflow-hidden p-6 mb-10"
+          className="bg-white rounded-md drop-shadow-md overflow-hidden p-6 mb-10 mx-5"
         >
           {/* ===== Banner Section ===== */}
           <div className="relative">
             <Image
-              src={university.image}
+              src={'/home/new.jpg'}
               alt={university.name}
               width={1200}
               height={400}

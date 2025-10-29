@@ -1,27 +1,27 @@
-import React from "react";
-import Image from "next/image";
-import Phone from "@/public/contact/phone.png";
-import BusinessHours from "@/public/contact/business-hours.png";
-import Address from "@/public/contact/address.png";
-import User from "../../icons/User";
-import Message from "../../icons/Message";
-
+import React from 'react';
+import Image from 'next/image';
+import Phone from '@/public/contact/phone.png';
+import BusinessHours from '@/public/contact/business-hours.png';
+import Address from '@/public/contact/address.png';
+import User from '../../icons/User';
+import Message from '../../icons/Message';
+import { ChevronRight } from 'lucide-react';
 const ContactUsForm = () => {
   const information = [
     {
       icon: Phone,
-      title: "PHONE",
-      description: "123-456-789",
+      title: 'PHONE',
+      description: '123-456-789',
     },
     {
       icon: BusinessHours,
-      title: "BUSINESS HOURS",
-      description: "Monday – Saturday: 8:00 AM – 5:00 PM Sunday: Closed",
+      title: 'BUSINESS HOURS',
+      description: 'Monday – Saturday: 8:00 AM – 5:00 PM Sunday: Closed',
     },
     {
       icon: Address,
-      title: "ADDRESS",
-      description: "Punjab, Lahore, Pakistan",
+      title: 'ADDRESS',
+      description: 'Punjab, Lahore, Pakistan',
     },
   ];
 
@@ -29,13 +29,12 @@ const ContactUsForm = () => {
     <section className="w-full py-16 px-4 bg-gray-50">
       <div className="text-center mb-12 md:mb-16">
         <h2 className="text-3xl md:text-5xl font-bold mb-8 mt-3">
-          <span className="text-[#190459]">CONTACT</span>{" "}
+          <span className="text-[#190459]">CONTACT</span>{' '}
           <span className="text-[#C7044C]">US FORM</span>
         </h2>
         <p className="text-gray-600 text-sm max-w-3xl mx-auto">
-          Have questions about studying abroad, finding the right university, or
-          using our platform? Our team is here to help you every step of the
-          way.
+          Have questions about studying abroad, finding the right university, or using our platform?
+          Our team is here to help you every step of the way.
         </p>
       </div>
       <div className="max-w-6xl mx-auto bg-white border shadow-xs rounded-2xl p-8 md:p-12">
@@ -49,20 +48,11 @@ const ContactUsForm = () => {
             <div className="flex flex-col gap-8">
               {information.map((info, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <Image
-                    src={info.icon}
-                    width={50}
-                    height={50}
-                    alt={info.title}
-                  />
+                  <Image src={info.icon} width={50} height={50} alt={info.title} />
 
                   <div>
-                    <h3 className="text-[#C7044C] font-semibold uppercase text-sm">
-                      {info.title}
-                    </h3>
-                    <p className="text-gray-600 whitespace-pre-line">
-                      {info.description}
-                    </p>
+                    <h3 className="text-[#C7044C] font-semibold uppercase text-sm">{info.title}</h3>
+                    <p className="text-gray-600 whitespace-pre-line">{info.description}</p>
                   </div>
                 </div>
               ))}
@@ -124,7 +114,10 @@ const ContactUsForm = () => {
                 type="submit"
                 className="bg-[#C7044C] text-white py-3 rounded-md font-semibold hover:bg-[#a1033f] transition mt-2 cursor-pointer"
               >
-                Submit
+                <div className="flex items-center justify-center">
+                  Submit
+                  <ChevronRight />
+                </div>
               </button>
             </form>
           </div>

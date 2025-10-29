@@ -1,13 +1,11 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Search } from "lucide-react";
-import { useRouter } from "next/navigation"; // ✅ import router
+import { useState } from 'react';
+import { Search } from 'lucide-react';
+import { useRouter } from 'next/navigation'; // ✅ import router
 
-export default function SearchBar({
-  placeholder = "Search university by name, program, country",
-}) {
-  const [query, setQuery] = useState("");
+export default function SearchBar({ placeholder = 'Search university by name, program, country' }) {
+  const [query, setQuery] = useState('');
   const router = useRouter();
 
   const handleSubmit = (e) => {
@@ -23,9 +21,9 @@ export default function SearchBar({
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3 w-full max-w-7xl bg-white py-3.5 px-4.5 rounded-md shadow-sm mx-auto"
+      className=" flex  gap-3 w-full  max-w-7xl  py-3.5 px-2.5 rounded-md shadow-sm mx-auto"
     >
-      <div className="flex items-center bg-[#F3F3F3] rounded-md px-3">
+      <div className="flex items-center w-full bg-[#F3F3F3] rounded-md px-3">
         <Search className="w-4 h-4 text-gray-400 mr-2" />
         <input
           type="text"
@@ -37,7 +35,7 @@ export default function SearchBar({
       </div>
       <button
         type="submit"
-        className="bg-[#c8004b] hover:bg-[#a1003e] cursor-pointer text-white text-sm font-semibold px-6 py-2.5 rounded-md transition-colors duration-200"
+        className="bg-[#c8004b] hover:bg-[#a1003e] truncate cursor-pointer text-white text-sm font-semibold px-6 py-2.5 rounded-md transition-colors duration-200"
       >
         Search now!
       </button>
