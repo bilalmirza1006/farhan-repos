@@ -41,16 +41,16 @@ const CountriesWeCover = () => {
           {countries.map((country) => (
             <div
               key={country.name}
-              className="flex items-center justify-center w-52 h-24 p-4 rounded-xl bg-white shadow-sm transition-all duration-200 hover:shadow-md flex-shrink-0 gap-3"
+              className="flex items-center justify-center w-44 md:w-56 h-20 px-4 rounded-xl bg-white shadow-sm transition-all duration-200 hover:shadow-md flex-shrink-0 gap-2 md:gap-3"
             >
               <Image
                 src={country.flag}
                 alt={country.name}
-                width={48}
-                height={48}
+                width={40}
+                height={40}
                 className="object-contain"
               />
-              <p className="text-sm md:text-lg font-semibold text-gray-900">
+              <p className="text-xl md:text-lg font-semibold text-gray-900">
                 {country.name}
               </p>
             </div>

@@ -152,10 +152,11 @@ const UniversitiesGridTab = ({ data }) => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-md text-sm cursor-pointer font-inter font-medium transition-all duration-200 ${activeTab === tab
+                className={`px-4 py-2 rounded-md text-sm cursor-pointer font-inter font-medium transition-all duration-200 ${
+                  activeTab === tab
                     ? "bg-white shadow text-black font-semibold"
                     : "text-gray-500 hover:text-gray-700"
-                  }`}
+                }`}
               >
                 {tab}
               </button>
@@ -171,14 +172,14 @@ const UniversitiesGridTab = ({ data }) => {
       </div>
 
       {/* Filter Bars (Desktop) */}
-      <div>
+      <div className="hidden md:flex">
         <FilterBar
           options={filterOptions.Country}
           placeholder="Search Country"
           icon={Globe}
         />
       </div>
-      <div>
+      <div className="hidden md:flex">
         <FilterBar
           options={filterOptions["Intake batch"]}
           placeholder="Search Intake Batch"
@@ -229,10 +230,11 @@ const UniversitiesGridTab = ({ data }) => {
                 <button
                   key={tab}
                   onClick={() => setActiveFilterTab(tab)}
-                  className={`w-1/3 text-sm py-2 rounded-md transition font-medium ${activeFilterTab === tab
+                  className={`w-1/3 text-sm py-2 rounded-md transition font-medium ${
+                    activeFilterTab === tab
                       ? "bg-[#C7044C] text-white"
                       : "text-gray-700 hover:bg-gray-100"
-                    }`}
+                  }`}
                 >
                   {tab}
                 </button>
@@ -260,10 +262,11 @@ const UniversitiesGridTab = ({ data }) => {
                   <button
                     key={option.id}
                     onClick={() => toggleFilter(option.label)}
-                    className={`flex items-center gap-2 border rounded-md px-4 py-2 text-sm transition ${selectedFilters.includes(option.label)
+                    className={`flex items-center gap-2 border rounded-md px-4 py-2 text-sm transition ${
+                      selectedFilters.includes(option.label)
                         ? "bg-[#C7044C] text-white border-[#C7044C]"
                         : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
-                      }`}
+                    }`}
                   >
                     {activeFilterTab === "Intake batch" ? (
                       <Calendar className="w-4 h-4" />

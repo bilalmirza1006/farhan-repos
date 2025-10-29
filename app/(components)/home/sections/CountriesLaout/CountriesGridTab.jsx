@@ -186,7 +186,7 @@ export default function CountriesGridTab() {
       </div>
 
       {/* Conditional Filter Bars */}
-      <div>
+      <div className="hidden md:flex flex-col">
         {!selectedCountry ? (
           <>
             <FilterBar

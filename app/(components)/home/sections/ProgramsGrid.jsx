@@ -1,32 +1,39 @@
-import { useState } from 'react';
-import { Group, Search } from 'lucide-react';
-import Dropdown from '../../ui/Dropdown';
-import FilterBar from '../../ui/Filterbar';
-import ProgramCard from './ProgramCard';
-import Modal from '../../ui/Modal';
-import { SlidersHorizontal } from 'lucide-react';
+import { useState } from "react";
+import { Group, Search, SlidersHorizontal } from "lucide-react";
+import Dropdown from "../../ui/Dropdown";
+import FilterBar from "../../ui/Filterbar";
+import ProgramCard from "./ProgramCard";
+import Modal from "../../ui/Modal";
 
 export default function ProgramsGrid({ data, onCourseClick }) {
   const [modal, setModal] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedOptions, setSelectedOptions] = useState([]); // now stores multiple
 
   const openModalHandler = () => setModal(true);
   const closeModalHandler = () => setModal(false);
 
-  // Dummy options
   const options = [
-    { id: 1, label: 'Computer Science', count: 1091 },
-    { id: 2, label: 'Biology', count: 12 },
-    { id: 3, label: 'Data Science', count: 307 },
-    { id: 4, label: 'MBA', count: 29 },
-    { id: 5, label: 'Automotive Engineering', count: 102 },
-    { id: 6, label: 'Business Analytics', count: 18 },
-    { id: 7, label: 'Artificial Intelligence', count: 43 },
+    { id: 1, label: "Computer Science", count: 1091 },
+    { id: 2, label: "Biology", count: 12 },
+    { id: 3, label: "Data Science", count: 307 },
+    { id: 4, label: "MBA", count: 29 },
+    { id: 5, label: "Automotive Engineering", count: 102 },
+    { id: 6, label: "Business Analytics", count: 18 },
+    { id: 7, label: "Artificial Intelligence", count: 43 },
   ];
 
   const filteredOptions = options.filter((opt) =>
     opt.label.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const toggleSelection = (id) => {
+    setSelectedOptions((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
+
+  const resetFilters = () => setSelectedOptions([]);
 
   return (
     <>
@@ -57,9 +64,14 @@ export default function ProgramsGrid({ data, onCourseClick }) {
 
       {/* Filter Bar */}
       <div className="hidden md:block">
-        <FilterBar options={options} placeholder="Search Program" icon={Group} />
+        <FilterBar
+          options={options}
+          placeholder="Search Program"
+          icon={Group}
+        />
       </div>
 
+      {/* Grid */}
       <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-8.5">
         {data.map((item, index) => (
           <ProgramCard
@@ -72,6 +84,7 @@ export default function ProgramsGrid({ data, onCourseClick }) {
         ))}
       </div>
 
+      {/* Modal */}
       {modal && (
         <Modal
           title="Filter"
@@ -80,23 +93,18 @@ export default function ProgramsGrid({ data, onCourseClick }) {
           className="fixed md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 py-6 px-5 rounded-t-[20px] md:rounded-[20px] shadow-lg bg-white transition-all duration-300"
         >
           <div className="space-y-4">
-            {/* Header */}
-            <div>
-              <p className="text-gray-500 text-sm flex">Apply filters to narrow your results</p>
-            </div>
+            <p className="text-gray-500 text-sm flex">
+              Apply filters to narrow your results
+            </p>
 
-            {/* Dropdown */}
-            <div>
-              <Dropdown
-                title="All Type"
-                defaultValue="Master"
-                onChange={(opt) => setAlertType(opt.id)}
-                width="w-full"
-                className="!py-2"
-              />
-            </div>
+            <Dropdown
+              title="All Type"
+              defaultValue="Master"
+              width="w-full"
+              className="!py-2"
+            />
 
-            {/* Search bar with your custom icon */}
+            {/* Search bar */}
             <div className="relative">
               <Search className="absolute left-3 top-2.5 text-gray-400" />
               <input
@@ -109,32 +117,45 @@ export default function ProgramsGrid({ data, onCourseClick }) {
 
             {/* Program options */}
             <div className="flex flex-wrap gap-2 mb-0">
-              {options
-                .filter((opt) => opt.label.toLowerCase().includes(searchTerm?.toLowerCase() || ''))
-                .map((option) => (
+              {filteredOptions.map((option) => {
+                const isSelected = selectedOptions.includes(option.id);
+                return (
                   <button
                     key={option.id}
-                    onClick={() => setAlertType(option.id)}
-                    className="flex items-center justify-center gap-2 border border-gray-200 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-md px-4 py-2 transition text-center"
+                    onClick={() => toggleSelection(option.id)}
+                    className={`flex items-center justify-center gap-2 border rounded-md px-4 py-2 text-sm transition text-center
+                      ${
+                        isSelected
+                          ? "bg-[#C7044C] text-white border-[#C7044C]"
+                          : "border-gray-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      }`}
                   >
-                    <Group className="w-4 h-4 text-gray-500" />
+                    <Group
+                      className={`w-4 h-4 ${
+                        isSelected ? "text-white" : "text-gray-500"
+                      }`}
+                    />
                     <span className="whitespace-nowrap">
                       {option.label} - {option.count}
                     </span>
                   </button>
-                ))}
+                );
+              })}
             </div>
           </div>
 
-          {/* Footer buttons */}
+          {/* Footer */}
           <div className="flex justify-between mt-6 mb-0">
             <button
-              onClick={closeModalHandler}
+              onClick={resetFilters}
               className="font-semibold text-white text-[14px] bg-gray-700 px-5 py-2 rounded"
             >
               Reset
             </button>
-            <button className="bg-[#C7044C] text-white font-semibold text-[14px] px-5 py-2 rounded">
+            <button
+              onClick={closeModalHandler}
+              className="bg-[#C7044C] text-white font-semibold text-[14px] px-5 py-2 rounded"
+            >
               Apply Filters
             </button>
           </div>
