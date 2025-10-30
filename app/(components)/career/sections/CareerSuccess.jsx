@@ -48,7 +48,7 @@ const CareerSuccess = () => {
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 success-card-wrapper gap-5 lg:gap-1">
           {/* Image 1 */}
           <article className="relative">
-            <h4 className="text-2xl font-semibold absolute -top-5 left-5 z-3 text-[var(--bg-primary-color)]">
+            <h4 className="text-2xl font-semibold absolute -top-8 lg:-top-5 left-5 z-3 text-[var(--bg-primary-color)]">
               Semester1
             </h4>
             <div
@@ -62,7 +62,7 @@ const CareerSuccess = () => {
                 className="w-full rounded-xl h-[400px] object-cover"
               />
 
-              {tooltip.show && tooltip.text === tooltipTexts[1] && (
+              {/* {tooltip.show && tooltip.text === tooltipTexts[1] && (
                 <div
                   className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
                   style={{
@@ -72,13 +72,13 @@ const CareerSuccess = () => {
                 >
                   {tooltip.text}
                 </div>
-              )}
+              )} */}
             </div>
           </article>
 
           {/* Image 2 */}
           <article className="relative">
-            <h4 className="w-full text-center text-2xl font-semibold absolute -top-5 z-3 text-primary-text">
+            <h4 className="w-full text-center text-2xl font-semibold absolute -top-8 lg:-top-5 z-3 text-primary-text">
               Semester2
             </h4>
             <div
@@ -91,7 +91,7 @@ const CareerSuccess = () => {
                 alt="success-2"
                 className="w-full rounded-xl h-[400px] object-cover"
               />
-              {tooltip.show && tooltip.text === tooltipTexts[2] && (
+              {/* {tooltip.show && tooltip.text === tooltipTexts[2] && (
                 <div
                   className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
                   style={{
@@ -101,13 +101,13 @@ const CareerSuccess = () => {
                 >
                   {tooltip.text}
                 </div>
-              )}
+              )} */}
             </div>
           </article>
 
           {/* Image 3 */}
           <article className="relative">
-            <h4 className="text-2xl font-semibold absolute -top-5 right-5 z-3 text-primary-text">
+            <h4 className="text-2xl font-semibold absolute -top-8 lg:-top-5 right-5 z-3 text-primary-text">
               4-Month Internship
             </h4>
             <div
@@ -120,7 +120,7 @@ const CareerSuccess = () => {
                 alt="success-3"
                 className="w-full rounded-xl h-[400px] object-cover"
               />
-              {tooltip.show && tooltip.text === tooltipTexts[3] && (
+              {/* {tooltip.show && tooltip.text === tooltipTexts[3] && (
                 <div
                   className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
                   style={{
@@ -130,13 +130,13 @@ const CareerSuccess = () => {
                 >
                   {tooltip.text}
                 </div>
-              )}
+              )} */}
             </div>
           </article>
 
           {/* ✅ Image 4 - New One */}
           <article className="relative">
-            <h4 className="text-2xl font-semibold absolute -top-5 left-5 z-3  text-[var(--bg-primary-color)]">
+            <h4 className="text-2xl font-semibold absolute -top-8 lg:-top-5 left-5 z-3  text-[var(--bg-primary-color)]">
               Placement & Beyond
             </h4>
             <div
@@ -149,7 +149,7 @@ const CareerSuccess = () => {
                 alt="success-4"
                 className="w-full rounded-xl h-[400px] object-cover"
               />
-              {tooltip.show && tooltip.text === tooltipTexts[4] && (
+              {/* {tooltip.show && tooltip.text === tooltipTexts[4] && (
                 <div
                   className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
                   style={{
@@ -159,7 +159,7 @@ const CareerSuccess = () => {
                 >
                   {tooltip.text}
                 </div>
-              )}
+              )} */}
             </div>
           </article>
         </section>

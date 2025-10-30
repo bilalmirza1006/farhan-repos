@@ -22,7 +22,7 @@ function CareerHero() {
           </h1>
         </div>
         <div>
-          <p className="font-medium text-2xl text-secondarytext">
+          <p className="p-9 font-medium text-2xl text-secondarytext">
             Transform your graduate journey with a structured, AI-driven program that readies you
             for real-world IT roles from Semester One.
           </p>
