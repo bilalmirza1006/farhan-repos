@@ -27,6 +27,7 @@
 // }
 
 import React from 'react';
+import Button from '../../ui/Button';
 
 export default function CTASection() {
   return (
@@ -51,9 +52,9 @@ export default function CTASection() {
           personalized learning journey and secure a high-demand internship before you graduate.
         </p>
 
-        <button className="px-6 py-2 mt-12 bg-primarycolor hover:bg-pink-700 text-white font-medium rounded-full transition">
-          Register Now
-        </button>
+        <div className="flex items-center justify-center">
+          <Button text={'Register Now'} />
+        </div>
       </div>
     </div>
   );

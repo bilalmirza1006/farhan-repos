@@ -145,47 +145,47 @@
 //   );
 // }
 
-"use client";
-import { useState } from "react";
-import { Bookmark, ChevronRight, CircleCheck, Clock } from "lucide-react";
-import Button from "@/app/(components)/ui/Button";
-import ProgramDetails from "@/app/(components)/ui/ProgramDetails";
+'use client';
+import { useState } from 'react';
+import { Bookmark, ChevronRight, CircleCheck, Clock } from 'lucide-react';
+import Button from '@/app/(components)/ui/Button';
+import ProgramDetails from '@/app/(components)/ui/ProgramDetails';
 
 const programs = [
-  { id: 1, name: "Computer Science", duration: "1–4 Year", courses: 560 },
-  { id: 2, name: "Business Analytics", duration: "1–4 Year", courses: 560 },
-  { id: 3, name: "Cyber Security", duration: "1–4 Year", courses: 560 },
-  { id: 4, name: "Automotive Engineering", duration: "1–4 Year", courses: 560 },
-  { id: 5, name: "MBA", duration: "1–4 Year", courses: 560 },
-  { id: 6, name: "Biology", duration: "1–4 Year", courses: 560 },
+  { id: 1, name: 'Computer Science', duration: '1–4 Year', courses: 560 },
+  { id: 2, name: 'Business Analytics', duration: '1–4 Year', courses: 560 },
+  { id: 3, name: 'Cyber Security', duration: '1–4 Year', courses: 560 },
+  { id: 4, name: 'Automotive Engineering', duration: '1–4 Year', courses: 560 },
+  { id: 5, name: 'MBA', duration: '1–4 Year', courses: 560 },
+  { id: 6, name: 'Biology', duration: '1–4 Year', courses: 560 },
   {
     id: 7,
-    name: "Artificial Intelligence",
-    duration: "1–4 Year",
+    name: 'Artificial Intelligence',
+    duration: '1–4 Year',
     courses: 560,
   },
 ];
 
 const relatedCourses = {
-  "Computer Science": [
-    { id: 1, title: "Data Structures & Algorithms", duration: "6 Months" },
-    { id: 2, title: "Machine Learning", duration: "8 Months" },
-    { id: 3, title: "Web Development", duration: "1 Year" },
+  'Computer Science': [
+    { id: 1, title: 'Data Structures & Algorithms', duration: '6 Months' },
+    { id: 2, title: 'Machine Learning', duration: '8 Months' },
+    { id: 3, title: 'Web Development', duration: '1 Year' },
   ],
-  "Business Analytics": [
-    { id: 1, title: "Data Visualization", duration: "6 Months" },
-    { id: 2, title: "Predictive Modeling", duration: "8 Months" },
+  'Business Analytics': [
+    { id: 1, title: 'Data Visualization', duration: '6 Months' },
+    { id: 2, title: 'Predictive Modeling', duration: '8 Months' },
   ],
-  "Cyber Security": [
-    { id: 1, title: "Network Security", duration: "7 Months" },
-    { id: 2, title: "Ethical Hacking", duration: "1 Year" },
+  'Cyber Security': [
+    { id: 1, title: 'Network Security', duration: '7 Months' },
+    { id: 2, title: 'Ethical Hacking', duration: '1 Year' },
   ],
 };
 
 export default function ProgramPage({ isOpen }) {
   const [selectedProgram, setSelectedProgram] = useState(null);
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFaq = (index) => {
@@ -194,7 +194,7 @@ export default function ProgramPage({ isOpen }) {
   const handleViewCourses = (programName) => {
     setSelectedProgram(programName);
     setSelectedCourse(null);
-    setSearchTerm("");
+    setSearchTerm('');
   };
 
   const handleApply = (courseTitle) => {
@@ -207,7 +207,7 @@ export default function ProgramPage({ isOpen }) {
     } else if (selectedProgram) {
       setSelectedProgram(null);
     }
-    setSearchTerm("");
+    setSearchTerm('');
   };
 
   const filteredPrograms = programs.filter((p) =>
@@ -242,15 +242,15 @@ export default function ProgramPage({ isOpen }) {
             >
               {selectedProgram}
             </span>
-            {selectedCourse ? <ChevronRight size={14} /> : ""}
+            {selectedCourse ? <ChevronRight size={14} /> : ''}
             <span
               className={`${
                 selectedCourse
-                  ? "cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition"
-                  : "cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition"
+                  ? 'cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition'
+                  : 'cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition'
               }`}
             >
-              {selectedCourse ? "Details" : ""}
+              {selectedCourse ? 'Details' : ''}
             </span>
           </>
         )}
@@ -348,9 +348,7 @@ export default function ProgramPage({ isOpen }) {
                   <Button
                     text="Apply"
                     onClick={() => handleApply(course.title)}
-                    cn={
-                      "!py-1 !bg-white !text-[#C7044C] !border-[#C7044C] !border-1"
-                    }
+                    cn={'!py-1 !bg-white !text-[#C7044C] !border-[#C7044C] !border-1'}
                   />
                 </div>
               </div>
@@ -367,24 +365,12 @@ export default function ProgramPage({ isOpen }) {
               <h2 className="font-inter font-bold md:text-2xl text-primarycolor  leading-5 mb-2">
                 {selectedProgram}
               </h2>
-              <p className="text-xs text-Lighttext font-inter font-medium ">
-                Duration: 1–4 Year
-              </p>
+              <p className="text-xs text-Lighttext font-inter font-medium ">Duration: 1–4 Year</p>
             </div>
             <div className="flex md:flex-row gap-3 mt-3 md:mt-0">
-              <Button
-                text="Shortlist"
-                icon={<Bookmark />}
-                cn={"!border-[#C7044C] !text-[#C7044C] !p-3 hover:bg-pink-50"}
-                bg={"bg-white border"}
-              />
+              <Button text="Shortlist" icon={<Bookmark />} cn={' !p-3 '} bg={'bg-white border'} />
 
-              <Button
-                text="Apply Now"
-                cn={" !text-white !p-3 "}
-                icon={<CircleCheck />}
-                onClick={isOpen}
-              />
+              <Button text="Apply Now" cn={'  !p-3 '} icon={<CircleCheck />} onClick={isOpen} />
             </div>
           </div>
 
@@ -400,16 +386,12 @@ export default function ProgramPage({ isOpen }) {
                 <h3 className="font-semibold font-inter text-primaryheading md:text-lg mb-2">
                   Program Requirements
                 </h3>
-                <p className="text-base text-secondarytext leading-relaxed">
-                  Program Requirement
-                </p>
+                <p className="text-base text-secondarytext leading-relaxed">Program Requirement</p>
 
                 <h3 className="font-semibold font-inter text-primaryheading md:text-lg mt-3 mb-1">
                   Program Comments
                 </h3>
-                <p className="text-xs text-gray-500 uppercase tracking-wide">
-                  Program Comment
-                </p>
+                <p className="text-xs text-gray-500 uppercase tracking-wide">Program Comment</p>
               </ProgramDetails>
 
               <ProgramDetails

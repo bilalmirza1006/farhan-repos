@@ -79,7 +79,7 @@ const Button = ({ text, icon, color, bg, cn, ...rest }) => {
   return (
     <button
       {...rest}
-      className={`group relative overflow-hidden py-3 px-6 rounded-[1.25rem]
+      className={`group relative overflow-hidden py-3 px-6 rounded-md
         flex justify-center items-center gap-2 cursor-pointer
         font-medium text-sm md:text-base
         bg-[rgba(154,154,154,0.4)] text-white backdrop-blur-md
@@ -94,7 +94,7 @@ const Button = ({ text, icon, color, bg, cn, ...rest }) => {
       {/* Curved wave fill rising upward */}
       <span
         className="absolute left-1/2 bottom-[-263%] w-[200%] h-[200%]
-        bg-[#C7044C] rounded-[50%] -translate-x-1/2
+        bg-[#C7044C] rounded-[100%] -translate-x-1/2
         transition-all duration-[500ms] [transition-timing-function:cubic-bezier(0.55,0.05,0.67,0.19)]
         group-hover:bottom-[-20%]"
       />

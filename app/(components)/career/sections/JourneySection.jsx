@@ -1,5 +1,6 @@
 import { TrendingUp, Users, Code } from 'lucide-react';
 import { ChevronDown } from 'lucide-react';
+import Button from '../../ui/Button';
 export default function JourneySection() {
   const stats = [
     {
@@ -38,12 +39,9 @@ export default function JourneySection() {
         ))}
       </div>
       <div className="flex flex-row items-center justify-center">
-        <button className="mt-8 flex flex-row items-center justify-center px-6 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 font-medium transition">
-          Show Insights
-          <span className="ml-1">
-            <ChevronDown />
-          </span>
-        </button>
+        <div className="flex mt-8 items-center justify-center">
+          <Button text={'Show Insights'} />
+        </div>
       </div>
     </section>
   );
