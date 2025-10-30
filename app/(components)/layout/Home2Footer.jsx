@@ -88,7 +88,7 @@ const Home2Footer = () => {
           <ul className="flex flex-col gap-2 md:gap-3 text-Primarytext text-sm md:text-base">
             <li>
               <Link
-                href="/home-2#university-search"
+                href="/"
                 className="hover:text-primarycolor  transition-colors duration-200"
               >
                 University Search
