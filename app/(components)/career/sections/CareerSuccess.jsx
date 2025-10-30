@@ -46,7 +46,7 @@ const CareerSuccess = () => {
         </div>
 
         {/* ✅ updated grid: now 4 columns on large screens */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 success-card-wrapper gap-5 lg:gap-1">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-1 vid-btn">
           {/* Image 1 */}
           <article className="relative">
             <h4 className="text-2xl font-semibold absolute -top-8 lg:-top-5 left-5 z-3 text-[var(--bg-primary-color)]">
@@ -57,11 +57,13 @@ const CareerSuccess = () => {
               onMouseMove={(e) => handleMouseMove(e, 1)}
               onMouseLeave={handleMouseLeave}
             >
-              <img
+            <div className="img-wrap">
+            <img
                 src={'/home-2/image-1.png'}
                 alt="success-1"
                 className="w-full rounded-xl h-[400px] object-cover"
               />
+            </div>
 
               {/* {tooltip.show && tooltip.text === tooltipTexts[1] && (
                 <div
@@ -87,11 +89,13 @@ const CareerSuccess = () => {
               onMouseMove={(e) => handleMouseMove(e, 2)}
               onMouseLeave={handleMouseLeave}
             >
-              <img
+             <div className="img-wrap">
+             <img
                 src={'/home-2/image-2.png'}
                 alt="success-2"
                 className="w-full rounded-xl h-[400px] object-cover"
               />
+             </div>
               {/* {tooltip.show && tooltip.text === tooltipTexts[2] && (
                 <div
                   className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
@@ -116,11 +120,13 @@ const CareerSuccess = () => {
               onMouseMove={(e) => handleMouseMove(e, 3)}
               onMouseLeave={handleMouseLeave}
             >
+              <div className="img-wrap">
               <img
                 src={'/home-2/image-3.png'}
                 alt="success-3"
                 className="w-full rounded-xl h-[400px] object-cover"
               />
+              </div>
               {/* {tooltip.show && tooltip.text === tooltipTexts[3] && (
                 <div
                   className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
@@ -145,11 +151,13 @@ const CareerSuccess = () => {
               onMouseMove={(e) => handleMouseMove(e, 4)}
               onMouseLeave={handleMouseLeave}
             >
-              <img
+             <div className="img-wrap">
+             <img
                 src={'/home-2/image4.png'}
                 alt="success-4"
                 className="w-full rounded-xl h-[400px] object-cover"
               />
+             </div>
               {/* {tooltip.show && tooltip.text === tooltipTexts[4] && (
                 <div
                   className="absolute bg-white p-2 rounded-full border border-gray-800 text-sm text-gray-800 max-w-[250px] pointer-events-none z-50"
