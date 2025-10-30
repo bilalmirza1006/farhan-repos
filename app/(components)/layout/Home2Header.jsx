@@ -47,7 +47,7 @@ const Home2Header = () => {
               <Link href="https://portal.get2uni.com/login">
                 <Button
                   text="Login"
-                  rightIcon={<ArrowRight className="w-4 h-4 text-black" />}
+                  rightIcon={<ArrowRight className="w-4 h-4" />}
                   bg="bg-[#FFFFFF3D]"
                   color="text-Primarytext"
                   cn="py-2.5 px-6 rounded-lg text-sm hover:scale-105 transition-all duration-200"
@@ -114,7 +114,7 @@ const Home2Header = () => {
           <Link href="https://portal.get2uni.com/login">
                 <Button
                   text="Login"
-                  rightIcon={<ArrowRight className="w-4 h-4 text-black" />}
+                  rightIcon={<ArrowRight className="w-4 h-4" />}
                   bg="bg-[#FFFFFF3D]"
                   color="text-Primarytext"
                   cn="py-2.5 px-6 rounded-lg text-sm hover:scale-105 transition-all duration-200"
