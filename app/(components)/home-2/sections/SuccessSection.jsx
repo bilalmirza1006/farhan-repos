@@ -15,9 +15,9 @@ const SuccessSection = () => {
   });
 
   const tooltipTexts = {
-    1: 'Person 1',
-    2: 'Person 2',
-    3: 'Person 3',
+    1: 'Michael Explains Why Us?',
+    2: 'Sarah Explains Why Us?',
+    3: 'Alexa Explains Why Us?',
   };
 
   const handleMouseMove = (e, imageId) => {
@@ -70,7 +70,7 @@ const SuccessSection = () => {
                     transform: 'translate(0, 0)',
                   }}
                 >
-                  {tooltip.text}
+                  {tooltip.text} 
                 </div>
               )}
             </div>

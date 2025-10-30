@@ -46,7 +46,7 @@ const CareerSuccess = () => {
         </div>
 
         {/* ✅ updated grid: now 4 columns on large screens */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-1 vid-btn">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 success-card-wrapper gap-5 lg:gap-1 no-over">
           {/* Image 1 */}
           <article className="relative">
             <h4 className="text-2xl font-semibold absolute -top-8 lg:-top-5 left-5 z-3 text-[var(--bg-primary-color)]">

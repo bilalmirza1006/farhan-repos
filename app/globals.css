@@ -375,6 +375,14 @@
     }
   }
 }
+.success-card-wrapper.no-over {
+.img-wrap {
+  &::before {
+    display: none;
+  }
+
+}
+}
 .uni-dream-card-wrapper {
   .img-wrap {
     position: relative;
