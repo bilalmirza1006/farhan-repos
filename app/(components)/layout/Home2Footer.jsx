@@ -49,15 +49,7 @@ const Home2Footer = () => {
           <ul className="flex flex-col gap-2 md:gap-3 text-Primarytext text-sm md:text-base">
             <li>
               <Link
-                href="/home-2"
-                className="hover:text-primarycolor  transition-colors duration-200"
-              >
-                How it work
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/home-2#features"
+                href="#features"
                 className="hover:text-primarycolor  transition-colors duration-200"
               >
                 Features
@@ -65,7 +57,7 @@ const Home2Footer = () => {
             </li>
             <li>
               <Link
-                href="/home-2#faqs"
+                href="#whatnext"
                 className="hover:text-primarycolor  transition-colors duration-200"
               >
                 FAQs
@@ -73,10 +65,18 @@ const Home2Footer = () => {
             </li>
             <li>
               <Link
-                href="/home-2#success-stories"
+                href="#exploreuni"
                 className="hover:text-primarycolor  transition-colors duration-200"
               >
-                Success Stories
+                Guides
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/career"
+                className="hover:text-primarycolor  transition-colors duration-200"
+              >
+                Career
               </Link>
             </li>
           </ul>

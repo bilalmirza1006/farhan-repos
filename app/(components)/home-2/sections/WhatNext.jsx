@@ -18,7 +18,7 @@ const WhatNext = () => {
   ];
 
   return (
-    <section className="bg-[#F5F8FF] py-12 md:py-20 lg:py-[100px] px-5 md:px-8 lg:px-12 flex flex-col gap-8 md:gap-10 lg:gap-12">
+    <section id="whatnext" className="bg-[#F5F8FF] py-12 md:py-20 lg:py-[100px] px-5 md:px-8 lg:px-12 flex flex-col gap-8 md:gap-10 lg:gap-12">
       {/* Header */}
       <div className="max-w-[600px] text-center mx-auto flex flex-col gap-3 md:gap-4">
         <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--heading)] leading-tight">
