@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../../ui/Button';
 import LandingHeader from '../../ui/LandingHeader';
+import Link from 'next/link';
 
 const Features = () => {
   const featuresData = [
@@ -14,6 +15,7 @@ const Features = () => {
         'Application Assistance',
       ],
       buttonText: 'Explore & Apply',
+      buttonLink: '/',
     },
     {
       title: 'Transfer Students',
@@ -23,6 +25,7 @@ const Features = () => {
         'Application Assistance',
       ],
       buttonText: 'Explore & Apply',
+      buttonLink: '/',
     },
     {
       title: 'Career Accelerator Program',
@@ -32,6 +35,7 @@ const Features = () => {
         'Training to Fill Your Knowledge Gaps',
       ],
       buttonText: 'Get a Guaranteed Interview',
+      buttonLink: '/career',
     },
   ];
 
@@ -82,7 +86,9 @@ const Features = () => {
                 ))}
               </ul>
             </div>
-            <LandingHeader text={ft.buttonText} />
+            <Link href={ft.buttonLink}>
+              <LandingHeader text={ft.buttonText} />
+            </Link>
           </article>
         ))}
       </section>
