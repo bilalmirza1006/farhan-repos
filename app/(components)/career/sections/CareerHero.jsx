@@ -2,6 +2,7 @@ import React from 'react';
 import BlurText from '../../animation/blurtext/BlurText';
 import Button from '../../ui/Button';
 import LandingHeader from '../../ui/LandingHeader';
+import Link from 'next/link';
 
 function CareerHero() {
   return (
@@ -36,7 +37,7 @@ function CareerHero() {
           </p>
         </div>
         <div className="mt-7">
-          <LandingHeader text={'Register Now'} />
+          <Link href="https://portal.get2uni.com/signup">  <LandingHeader text={'Register Now'} /></Link>
         </div>
       </div>
     </div>

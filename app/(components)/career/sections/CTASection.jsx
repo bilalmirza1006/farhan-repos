@@ -29,6 +29,7 @@
 import React from 'react';
 import Button from '../../ui/Button';
 import LandingHeader from '../../ui/LandingHeader';
+import Link from 'next/link';
 
 export default function CTASection() {
   return (
@@ -54,7 +55,7 @@ export default function CTASection() {
         </p>
 
         <div className="flex items-center justify-center">
-          <LandingHeader text={'Register Now'} />
+          <Link href="https://portal.get2uni.com/signup">  <LandingHeader text={'Register Now'} /></Link>
         </div>
       </div>
     </div>

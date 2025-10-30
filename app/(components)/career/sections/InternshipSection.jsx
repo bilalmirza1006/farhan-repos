@@ -7,6 +7,7 @@ import Tech from '@/public/icons/Tech';
 import { Code, Cpu, Network, Brain, ServerCog, Landmark } from 'lucide-react';
 import Button from '../../ui/Button';
 import LandingHeader from '../../ui/LandingHeader';
+import Link from 'next/link';
 
 const internships = [
   {
@@ -72,7 +73,7 @@ export default function InternshipSection() {
       </p>
 
       <div className="w-full  mt-6 flex items-center justify-center">
-        <LandingHeader text={' Get Started'} />
+        <Link href="/">  <LandingHeader text={' Get Started'} /></Link>
       </div>
     </section>
   );

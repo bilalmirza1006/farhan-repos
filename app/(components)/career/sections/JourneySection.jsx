@@ -1,6 +1,8 @@
 import { TrendingUp, Users, Code } from 'lucide-react';
 import { ChevronDown } from 'lucide-react';
 import Button from '../../ui/Button';
+import Link from 'next/link';
+import LandingHeader from '../../ui/LandingHeader';
 export default function JourneySection() {
   const stats = [
     {
@@ -40,7 +42,7 @@ export default function JourneySection() {
       </div>
       <div className="flex flex-row items-center justify-center">
         <div className="flex mt-8 items-center justify-center">
-          <Button text={'Show Insights'} />
+         <Link href="/">  <LandingHeader text={'Show Insights'} /></Link>
         </div>
       </div>
     </section>

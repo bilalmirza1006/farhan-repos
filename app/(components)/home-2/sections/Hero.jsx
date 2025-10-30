@@ -8,6 +8,7 @@ import './textRotate.css'; // 👈 make sure this file is created
 import LandingButton from '../../ui/LandingButton';
 import { useRouter } from 'next/navigation';
 import BlurText from '../../animation/blurtext/BlurText';
+import Link from 'next/link';
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -121,7 +122,7 @@ const Hero = () => {
               color="text-black"
               cn="hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg"
             /> */}
-            <LandingButton onClick={handleClick} text="Get Started" />
+          <Link href="/">  <LandingButton text="Get Started" /></Link>
           </div>
         </div>
       </section>

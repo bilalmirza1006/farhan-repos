@@ -6,6 +6,7 @@ import Image3 from '@/public/home-2/success-3.jpg';
 // import Image4 from '@/public/home-2/success-4.png'; // ✅ new image
 import Button from '../../ui/Button';
 import LandingButton from '../../ui/LandingButton';
+import Link from 'next/link';
 
 const CareerSuccess = () => {
   const [tooltip, setTooltip] = useState({
@@ -173,7 +174,7 @@ const CareerSuccess = () => {
           </article>
         </section>
 
-        <LandingButton text="Get Started" bg="bg-white" color="text-black" />
+        <Link href="/">  <LandingButton text="Get Started" /></Link>
       </section>
     </section>
   );
