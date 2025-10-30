@@ -5,6 +5,7 @@ import Image2 from '@/public/home-2/success-2.jpg';
 import Image3 from '@/public/home-2/success-3.jpg';
 import Button from '../../ui/Button';
 import LandingButton from '../../ui/LandingButton';
+import Link from 'next/link';
 
 const SuccessSection = () => {
   const [tooltip, setTooltip] = useState({
@@ -132,7 +133,7 @@ const SuccessSection = () => {
             </div>
           </article>
         </section>
-        <LandingButton text="Get Started" />
+        <Link href="/">  <LandingButton text="Get Started" /></Link>
         {/* <Button text="Get Started" bg="bg-white" color="text-black" /> */}
       </section>
     </section>
