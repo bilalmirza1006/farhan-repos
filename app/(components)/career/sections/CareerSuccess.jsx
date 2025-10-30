@@ -37,7 +37,7 @@ const CareerSuccess = () => {
   };
 
   return (
-    <section className="bg-[#F5F8FF] py-[60px] px-5">
+    <section id="features" className="bg-[#F5F8FF] py-[60px] px-5">
       <section className="flex flex-col max-w-[1200px] mx-auto gap-20 items-center ">
         <div className="max-w-[700px] text-center mx-auto flex flex-col gap-3">
           <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--heading)]">
