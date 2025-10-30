@@ -15,7 +15,7 @@ const SuccessStories = () => {
       </div>
 
       {/* Image Card */}
-      <div className="relative mt-10 group success-card-wrapper-c">
+      <div className="relative mt-10 group vid-btn">
         <div className="img-wrap">
         <img
           src={'/home-2/success-1.jpg'}
