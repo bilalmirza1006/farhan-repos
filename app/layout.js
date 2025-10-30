@@ -10,7 +10,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
+export const metadata = {
+  title: "Get2Uni",
+  icons: {
+    icon: "/home/logo.png",
+  },
+};
 /**
  * Root Layout - Minimal setup
  * Only provides global styles and fonts
@@ -19,7 +24,9 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

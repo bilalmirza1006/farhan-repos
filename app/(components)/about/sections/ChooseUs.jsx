@@ -88,8 +88,8 @@ const ChooseUs = () => {
           <Button
             text="Explore Courses"
             bg="bg-transparent"
-            color="text-primary"
-            cn="border border-primary hover:bg-primaryhover hover:text-white cursor-pointer"
+            color="text-[#C7044C]"
+            cn="!border-[#C7044C] border-2 hover:bg-primaryhover hover:text-white cursor-pointer"
           />
           <Button
             text="Book Free Consultation"

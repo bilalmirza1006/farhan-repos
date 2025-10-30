@@ -56,7 +56,9 @@ const WhatYouCanDo = () => {
               key={index}
               className="p-6 rounded-2xl transition-all bg-white border border-gray-200 hover:shadow-md text-center flex flex-col items-center hover:bg-[#C7044C] hover:text-white"
             >
-              <div className="text-5xl mb-4">{feature.icon}</div>
+              <div className="text-5xl mb-4  group-hover:text-white">
+                {feature.icon}
+              </div>
               <h3 className="text-lg font-bold mb-3">{feature.title}</h3>
               <p className="text-sm leading-relaxed">{feature.description}</p>
             </Card>

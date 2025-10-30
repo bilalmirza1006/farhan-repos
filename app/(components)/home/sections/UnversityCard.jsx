@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import React from 'react';
-import Button from '../../ui/Button';
-import { useRouter } from 'next/navigation';
+import Image from "next/image";
+import React from "react";
+import Button from "../../ui/Button";
+import { useRouter } from "next/navigation";
 
 const UniversityCard = ({
   name,
@@ -18,8 +18,8 @@ const UniversityCard = ({
   // ✅ Create a slug from university name (for dynamic route)
   const slug = name
     .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '');
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
 
   // ✅ Handle navigation
   const handleNavigate = () => {
@@ -32,8 +32,8 @@ const UniversityCard = ({
       <div className="flex items-start gap-2.5 mb-2 ">
         <div className="w-10 h-10 rounded-[2px] overflow-hidden  flex-shrink-0">
           <Image
-            src={'/home/new.jpg'}
-            alt={'logo'}
+            src={"/home/new.jpg"}
+            alt={"logo"}
             width={40}
             height={40}
             className="object-cover w-full h-full"
@@ -43,7 +43,9 @@ const UniversityCard = ({
           <h3 className="md:text-base font-inter font-semibold text-Primarytext leading-5">
             {name}
           </h3>
-          <p className="text-xs font-inter font-normal text-secondarytext ">{program}</p>
+          <p className="text-xs font-inter font-normal text-secondarytext ">
+            {program}
+          </p>
         </div>
       </div>
 
@@ -62,7 +64,9 @@ const UniversityCard = ({
         Deposit {deposit}
       </p>
 
-      <p className="text-sm text-start text-Primarytext font-medium font-inter mb-2">{startDate}</p>
+      <p className="text-sm text-start text-Primarytext font-medium font-inter mb-2">
+        {startDate}
+      </p>
 
       <Button
         text="View Details"

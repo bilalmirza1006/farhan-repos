@@ -1,6 +1,7 @@
-'use client';
-import SpotlightCard from '@/components/SpotlightCard';
-import { Clock, BookOpen } from 'lucide-react';
+"use client";
+import SpotlightCard from "@/components/SpotlightCard";
+import { Clock, BookOpen } from "lucide-react";
+import CourseCardIcon from "@/public/home/CourseCardIcon";
 
 export default function ProgramCard({ title, duration, price, onCourseClick }) {
   const handleButtonClick = () => {
@@ -16,7 +17,7 @@ export default function ProgramCard({ title, duration, price, onCourseClick }) {
     >
       {/* <div className="bg-white border border-[#E3E3E3] rounded-[12px] p-5 drop-shadow-sm hover:shadow-md transition-all duration-200"> */}
       {/* Title */}
-      <h3 className="text-lg font-inter font-semibold text-primarycolor  mb-2 text-start">
+      <h3 className="text-lg font-inter font-semibold text-[#C7044C] mb-2 text-start">
         {title}
       </h3>
 
@@ -32,10 +33,11 @@ export default function ProgramCard({ title, duration, price, onCourseClick }) {
           onClick={handleButtonClick}
           className="flex items-center gap-2 text-[#c8004b] border border-[#c8004b] text-sm font-medium px-2.5 py-1.5 rounded-md hover:bg-[#c8004b] hover:text-white transition-colors"
         >
-          <BookOpen className="w-4 h-4" />
-          Courses: ${price}
+          Courses:
+          <CourseCardIcon className="w-4 h-4" />${price}
         </button>
       </div>
+
       {/* </div> */}
     </SpotlightCard>
   );

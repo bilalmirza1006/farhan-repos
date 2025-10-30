@@ -1,33 +1,33 @@
-import { useState } from 'react';
-import { Group, Search, SlidersHorizontal } from 'lucide-react';
-import Dropdown from '../../ui/Dropdown';
-import FilterBar from '../../ui/Filterbar';
-import ProgramCard from './ProgramCard';
-import Modal from '../../ui/Modal';
+import { useState } from "react";
+import { Group, Search, SlidersHorizontal } from "lucide-react";
+import Dropdown from "../../ui/Dropdown";
+import FilterBar from "../../ui/Filterbar";
+import ProgramCard from "./ProgramCard";
+import Modal from "../../ui/Modal";
 
 export default function ProgramsGrid({ data, onCourseClick }) {
   const [modal, setModal] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedOptions, setSelectedOptions] = useState([]); // now stores multiple
 
   const openModalHandler = () => {
     setModal(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeModalHandler = () => {
     setModal(false);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = "auto";
   };
 
   const options = [
-    { id: 1, label: 'Computer Science', count: 1091 },
-    { id: 2, label: 'Biology', count: 12 },
-    { id: 3, label: 'Data Science', count: 307 },
-    { id: 4, label: 'MBA', count: 29 },
-    { id: 5, label: 'Automotive Engineering', count: 102 },
-    { id: 6, label: 'Business Analytics', count: 18 },
-    { id: 7, label: 'Artificial Intelligence', count: 43 },
+    { id: 1, label: "Computer Science", count: 1091 },
+    { id: 2, label: "Biology", count: 12 },
+    { id: 3, label: "Data Science", count: 307 },
+    { id: 4, label: "MBA", count: 29 },
+    { id: 5, label: "Automotive Engineering", count: 102 },
+    { id: 6, label: "Business Analytics", count: 18 },
+    { id: 7, label: "Artificial Intelligence", count: 43 },
   ];
 
   const filteredOptions = options.filter((opt) =>
@@ -71,7 +71,11 @@ export default function ProgramsGrid({ data, onCourseClick }) {
 
       {/* Filter Bar */}
       <div className="hidden md:block">
-        <FilterBar options={options} placeholder="Search Program" icon={Group} />
+        <FilterBar
+          options={options}
+          placeholder="Search Program"
+          icon={Group}
+        />
       </div>
 
       {/* Grid */}
@@ -96,9 +100,16 @@ export default function ProgramsGrid({ data, onCourseClick }) {
           className="fixed md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 py-6 px-5 rounded-t-[20px] md:rounded-[20px] shadow-lg bg-white transition-all duration-300"
         >
           <div className="space-y-4">
-            <p className="text-gray-500 text-sm flex">Apply filters to narrow your results</p>
+            <p className="text-gray-500 text-sm flex">
+              Apply filters to narrow your results
+            </p>
 
-            <Dropdown title="All Type" defaultValue="Master" width="w-full" className="!py-2" />
+            <Dropdown
+              title="All Type"
+              defaultValue="Master"
+              width="w-full"
+              className="!py-2"
+            />
 
             {/* Search bar */}
             <div className="relative">
@@ -122,11 +133,15 @@ export default function ProgramsGrid({ data, onCourseClick }) {
                     className={`flex items-center justify-center gap-2 border rounded-md px-4 py-2 text-sm transition text-center
                       ${
                         isSelected
-                          ? 'bg-[#C7044C] text-white border-[#C7044C]'
-                          : 'border-gray-200 bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          ? "bg-[#C7044C] text-white border-[#C7044C]"
+                          : "border-gray-200 bg-gray-100 text-gray-700 hover:bg-gray-200"
                       }`}
                   >
-                    <Group className={`w-4 h-4 ${isSelected ? 'text-white' : 'text-gray-500'}`} />
+                    <Group
+                      className={`w-4 h-4 ${
+                        isSelected ? "text-white" : "text-gray-500"
+                      }`}
+                    />
                     <span className="whitespace-nowrap">
                       {option.label} - {option.count}
                     </span>

@@ -36,25 +36,25 @@
 
 // export default HeroSection
 
-'use client';
-import { Filter, Search, SlidersHorizontal } from 'lucide-react';
-import { useState } from 'react';
-import Dropdown from '../../ui/Dropdown';
-import Button from '../../ui/Button';
-import SearchBar from '../../ui/SearchInput';
-import BlurText from '../../animation/blurtext/BlurText';
-import AnimatedContent from '../../animation/animatedcontent/AnimatedContent';
+"use client";
+import { Filter, Search, SlidersHorizontal } from "lucide-react";
+import { useState } from "react";
+import Dropdown from "../../ui/Dropdown";
+import Button from "../../ui/Button";
+import SearchBar from "../../ui/SearchInput";
+import BlurText from "../../animation/blurtext/BlurText";
+import AnimatedContent from "../../animation/animatedcontent/AnimatedContent";
 // import { FaSearch } from "react-icons/fa";
 
 export default function HeroSection() {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   const handleSearch = (query) => {
-    console.log('Search query:', query);
+    console.log("Search query:", query);
     // TODO: fetch results from API here
   };
   const handleAnimationComplete = () => {
-    console.log('Animation completed!');
+    console.log("Animation completed!");
   };
   return (
     <section className="flex justify-center items-center bg-white h-[520px] overflow-hidden ">
@@ -82,7 +82,10 @@ export default function HeroSection() {
             delay={150}
           />
         </h1>
-
+        <p className="md:text-[20px] text-gray-600 mt-3">
+          Find useful information, apply, get visa and even a job all in one
+          place
+        </p>
         {/* Search Bar */}
         <AnimatedContent
           // distance={150}
@@ -114,24 +117,26 @@ export default function HeroSection() {
                         <option>Rank</option>
                     </select> */}
             <div className="w-full ">
-              <Dropdown width={'w-full'} defaultValue="Rank" />
+              <Dropdown width={"w-full"} defaultValue="Rank" />
             </div>
             <div className="w-full ">
-              <Dropdown width={'w-full'} defaultValue="Acceptance" />
+              <Dropdown width={"w-full"} defaultValue="Acceptance" />
             </div>
             <div className="w-full ">
-              <Dropdown width={'w-full'} defaultValue="Deadline" />
+              <Dropdown width={"w-full"} defaultValue="Deadline" />
             </div>
             <div className="w-full ">
-              <Dropdown width={'w-full'} defaultValue="App " />
+              <Dropdown width={"w-full"} defaultValue="App Fee" />
             </div>
             <div className="w-full ">
-              <Dropdown width={'w-full'} defaultValue="Tuition " />
+              <Dropdown width={"w-full"} defaultValue="Tuition Fee" />
             </div>
             <div className="w-full ">
               <Button
                 text="Clear Filter"
-                icon={<SlidersHorizontal className="text-white block  sm:hidden lg:block" />}
+                icon={
+                  <SlidersHorizontal className="text-white block  sm:hidden lg:block" />
+                }
                 color="text-white"
                 bg="bg-[#ACACAC]"
                 cn="!w-full !py-3.5 truncate"

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { Search, X, ChevronDown } from 'lucide-react';
-import { createPortal } from 'react-dom';
+import { useState, useRef, useEffect } from "react";
+import { Search, X, ChevronDown } from "lucide-react";
+import { createPortal } from "react-dom";
 
 export default function FilterBar({
   options = [],
-  placeholder = 'Search...',
+  placeholder = "Search...",
   onFilterChange,
   icon: IconComponent,
 }) {
@@ -14,6 +14,7 @@ export default function FilterBar({
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const buttonRef = useRef(null);
   const dropdownRef = useRef(null);
+  const filtersContainerRef = useRef(null);
 
   // ✅ Close dropdown when clicking outside
   useEffect(() => {
@@ -29,12 +30,12 @@ export default function FilterBar({
     };
 
     if (dropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     } else {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     }
 
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [dropdownOpen]);
 
   const toggleFilter = (option) => {
@@ -47,6 +48,16 @@ export default function FilterBar({
 
     setFilters(updatedFilters);
     if (onFilterChange) onFilterChange(updatedFilters);
+
+    // ✅ Auto-scroll to the newest filter
+    setTimeout(() => {
+      if (filtersContainerRef.current) {
+        filtersContainerRef.current.scrollTo({
+          left: filtersContainerRef.current.scrollWidth,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
   };
 
   const removeFilter = (id) => {
@@ -68,12 +79,15 @@ export default function FilterBar({
           />
         </div>
 
-        {/* Selected filters */}
-        <div className="absolute right-12 flex flex-row-reverse items-center gap-4 pr-2">
+        {/* Selected filters with horizontal scroll */}
+        <div
+          ref={filtersContainerRef}
+          className="absolute right-12 flex overflow-hidden flex-row-reverse items-center gap-2 pr-2 max-w-[60%] overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent"
+        >
           {filters.map((filter) => (
             <div
               key={filter.id}
-              className="flex items-center gap-2 bg-primarycolor text-white px-3.5 py-2 rounded-md text-xs md:text-sm font-normal whitespace-nowrap"
+              className="flex items-center gap-2 bg-primarycolor text-white px-3.5 py-2 rounded-md text-xs md:text-sm font-normal whitespace-nowrap flex-shrink-0"
             >
               {IconComponent && <IconComponent />}
               <span>
@@ -92,7 +106,7 @@ export default function FilterBar({
           <button
             ref={buttonRef}
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center gap-1  text-secondarycolor px-2 py-1 rounded-md text-xs md:text-sm hover:bg-gray-100"
+            className="flex items-center gap-1 text-secondarycolor px-2 py-1 rounded-md text-xs md:text-sm hover:bg-gray-100"
           >
             <ChevronDown className="w-4 h-4" />
           </button>
@@ -102,16 +116,15 @@ export default function FilterBar({
             (() => {
               const rect = buttonRef.current.getBoundingClientRect();
               const dropdownWidth = Math.max(rect.width, 224);
-              const left = rect.left - dropdownWidth; // Left side of button
+              const left = rect.left - dropdownWidth;
 
               return createPortal(
                 <div
-                  ref={dropdownRef} // ✅ Added ref for outside click detection
-                  className="bg-white border  border-gray-200 rounded-md shadow-md max-h-60 overflow-auto"
+                  ref={dropdownRef}
+                  className="bg-white border border-gray-200 rounded-md shadow-md max-h-60 overflow-auto"
                   style={{
-                    position: 'absolute',
-                    // top: rect.bottom + window.scrollY,
-                    top: rect.bottom + window.scrollY + 10,
+                    position: "absolute",
+                    top: rect.bottom + window.scrollY + 20,
                     left: left,
                     width: dropdownWidth,
                     zIndex: 9999,
@@ -124,12 +137,16 @@ export default function FilterBar({
                         key={option.id}
                         onClick={() => toggleFilter(option)}
                         className={`flex justify-between items-center w-full px-3 py-2 text-sm hover:bg-gray-100 ${
-                          selected ? 'text-[#C8102E] font-semibold' : 'text-gray-700'
+                          selected
+                            ? "text-[#C8102E] font-semibold"
+                            : "text-gray-700"
                         }`}
                       >
                         {option.label}
                         {option.count && (
-                          <span className="text-xs text-gray-400">{option.count}</span>
+                          <span className="text-xs text-gray-400">
+                            {option.count}
+                          </span>
                         )}
                       </button>
                     );

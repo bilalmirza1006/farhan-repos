@@ -1,7 +1,7 @@
-'use client';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useRef, useState, useLayoutEffect } from 'react';
-import { Minus, Plus } from 'lucide-react';
+"use client";
+import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState, useLayoutEffect } from "react";
+import { Minus, Plus } from "lucide-react";
 
 export default function ProgramDetails({ title, children, isOpen, onToggle }) {
   const ref = useRef(null);
@@ -19,14 +19,16 @@ export default function ProgramDetails({ title, children, isOpen, onToggle }) {
       {/* Header */}
       <button
         onClick={onToggle}
-        className="w-full flex justify-between items-center px-5 py-4 text-left focus:outline-none"
+        className="w-full flex items-center px-5 py-4 text-left focus:outline-none"
       >
-        <span className="font-inter font-semibold text-primaryheading">{title}</span>
         {isOpen ? (
-          <Minus size={18} className="text-primarycolor " />
+          <Minus size={18} className="text-[#52BD95]" />
         ) : (
           <Plus size={18} className="text-primarycolor " />
         )}
+        <span className="font-inter ml-5 font-semibold text-primaryheading">
+          {title}
+        </span>
       </button>
 
       {/* Animated Content */}

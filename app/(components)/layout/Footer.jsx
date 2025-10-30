@@ -1,4 +1,6 @@
-import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { FaFacebookF } from "react-icons/fa";
+import { IoLogoInstagram } from "react-icons/io";
+import { FaTwitter } from "react-icons/fa";
 
 // app/(components)/layout/Footer.tsx
 export const Footer = () => {
@@ -50,13 +52,13 @@ export const Footer = () => {
           {/* Social Icons */}
           <div className="flex gap-5 text-[#190459] md:text-2xl mt-4 md:mt-0">
             <a href="#" className="hover:text-[#C8102E] transition-colors">
-              <Facebook size={22} strokeWidth={2} />
+              <FaFacebookF size={22} strokeWidth={2} />
             </a>
             <a href="#" className="hover:text-[#C8102E] transition-colors">
-              <Instagram size={22} strokeWidth={2} />
+              <IoLogoInstagram size={22} strokeWidth={2} />
             </a>
             <a href="#" className="hover:text-[#C8102E] transition-colors">
-              <Twitter size={22} strokeWidth={2} />
+              <FaTwitter size={22} strokeWidth={2} />
             </a>
           </div>
         </div>

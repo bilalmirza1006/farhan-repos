@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
-import ProgramPage from '@/app/(components)/home/sections/ProgramDetailPage';
-import ApplyModal from '@/app/(components)/ui/ApplyModal';
-import Button from '@/app/(components)/ui/Button';
-import BacklogsIcon from '@/public/home/BacklogsIcon';
-import CreditsIcon from '@/public/home/CreditsIcon';
-import GreIcon from '@/public/home/GreIcon';
-import PrivateIcon from '@/public/home/PrivateIcon';
-import RankStar from '@/public/home/RankStar';
-import UsIcon from '@/public/home/UsIcon';
-import WorldRankIcon from '@/public/home/WorldRankIcon';
-import Image from 'next/image';
-import { useState } from 'react';
+import ProgramPage from "@/app/(components)/home/sections/ProgramDetailPage";
+import ApplyModal from "@/app/(components)/ui/ApplyModal";
+import Button from "@/app/(components)/ui/Button";
+import BacklogsIcon from "@/public/home/BacklogsIcon";
+import CreditsIcon from "@/public/home/CreditsIcon";
+import GreIcon from "@/public/home/GreIcon";
+import PrivateIcon from "@/public/home/PrivateIcon";
+import RankStar from "@/public/home/RankStar";
+import UsIcon from "@/public/home/UsIcon";
+import WorldRankIcon from "@/public/home/WorldRankIcon";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function UniversityDetailPage({ params }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,56 +22,57 @@ export default function UniversityDetailPage({ params }) {
   const universities = [
     {
       id: 1,
-      name: 'University of New Haven',
-      program: 'MS Computer Science',
-      image: '/images/university1.png',
-      locations: 'Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI',
-      tuition: '$88,720',
-      applicationFee: '$75',
-      scholarships: '3',
-      scholarshipAmount: '$1,000',
-      deadline: 'Fall 15 Dec',
-      daysLeft: '170 days left',
+      name: "University of New Haven",
+      program: "MS Computer Science",
+      image: "/images/university1.png",
+      locations:
+        "Kansas City, MO | Dallas, TX | Miami, FL | Jersey City, NJ | Kenosha, WI",
+      tuition: "$88,720",
+      applicationFee: "$75",
+      scholarships: "3",
+      scholarshipAmount: "$1,000",
+      deadline: "Fall 15 Dec",
+      daysLeft: "170 days left",
       tests: {
         IELTS: 7,
-        PTE: '60%',
+        PTE: "60%",
         TOEFL: 100,
         Duolingo: 120,
       },
-      GPA: '60%',
-      Rank: '10',
-      Backlogs: '12',
-      WorldRank: '9',
-      USNewsRank: '12',
-      Type: 'Private',
-      GRE: 'Waived',
-      Credits: '12',
+      GPA: "60%",
+      Rank: "10",
+      Backlogs: "12",
+      WorldRank: "9",
+      USNewsRank: "12",
+      Type: "Private",
+      GRE: "Waived",
+      Credits: "12",
 
       // 👇 New Section for Course Details
       courseDetails: {
         programRequirements: [
-          'Bachelor’s degree in Computer Science or related field',
-          'Minimum GPA of 3.0 (or equivalent)',
-          'Proof of English proficiency (IELTS/TOEFL/Duolingo)',
-          'GRE (waived for 2025 intake)',
+          "Bachelor’s degree in Computer Science or related field",
+          "Minimum GPA of 3.0 (or equivalent)",
+          "Proof of English proficiency (IELTS/TOEFL/Duolingo)",
+          "GRE (waived for 2025 intake)",
         ],
         programComments: [
-          'The MS in Computer Science program emphasizes practical learning and research.',
-          'Internship opportunities available through the Career Development Center.',
-          'Students can choose between thesis and non-thesis options.',
+          "The MS in Computer Science program emphasizes practical learning and research.",
+          "Internship opportunities available through the Career Development Center.",
+          "Students can choose between thesis and non-thesis options.",
         ],
         importantDates: {
-          applicationOpen: '1 August 2024',
-          applicationDeadline: '15 December 2024',
-          semesterStart: '25 January 2025',
+          applicationOpen: "1 August 2024",
+          applicationDeadline: "15 December 2024",
+          semesterStart: "25 January 2025",
         },
         requiredDocuments: [
-          'Official Transcripts',
-          'Statement of Purpose (SOP)',
-          'Letters of Recommendation (2)',
-          'Resume/CV',
-          'Passport Copy',
-          'English Proficiency Test Scores',
+          "Official Transcripts",
+          "Statement of Purpose (SOP)",
+          "Letters of Recommendation (2)",
+          "Resume/CV",
+          "Passport Copy",
+          "English Proficiency Test Scores",
         ],
       },
     },
@@ -86,8 +87,8 @@ export default function UniversityDetailPage({ params }) {
   };
 
   const handleFormSubmit = (formData) => {
-    console.log('User Info:', formData);
-    localStorage.setItem('enrollmentCompleted', 'true'); // Save flag
+    console.log("User Info:", formData);
+    localStorage.setItem("enrollmentCompleted", "true"); // Save flag
     setIsModalOpen(false);
   };
 
@@ -101,14 +102,14 @@ export default function UniversityDetailPage({ params }) {
           {/* ===== Banner Section ===== */}
           <div className="relative">
             <Image
-              src={'/home/new.jpg'}
+              src={"/home/new.jpg"}
               alt={university.name}
               width={1200}
               height={400}
               className="w-full h-96 object-cover rounded-[16px] border"
             />
             <div className="absolute top-6 left-6">
-              <Button text={'View All Programs'} />
+              <Button text={"View All Programs"} />
             </div>
             <div className="absolute md:top-80 top-70 left-0 w-full flex flex-wrap md:justify-end justify-center px-6 gap-2.5">
               <div className="px-5 py-3 font-inter font-medium text-primaryheading text-xs md:text-base lg:text:lg  bg-white rounded-md">
@@ -129,7 +130,7 @@ export default function UniversityDetailPage({ params }) {
           {/* ===== University Info ===== */}
           <div className="mt-4.5 rounded-md gap-5 md:gap-0 flex flex-col lg:flex-row md:justify-between">
             <div className="w-full space-y-2.5">
-              <h2 className="text-2xl font-bold text-primarycolor font-inter uppercase">
+              <h2 className="text-2xl font-bold text-Primarytext  font-inter uppercase">
                 {university.name}
               </h2>
               <p className="text-lg font-inter font-medium text-primaryheading ">
@@ -168,23 +169,33 @@ export default function UniversityDetailPage({ params }) {
                   <p className="font-inter font-normal text-sm leading-5">
                     {university.tests.IELTS}
                   </p>
-                  <p className="font-inter font-semibold text-sm leading-5 ">IELTS</p>
+                  <p className="font-inter font-semibold text-sm leading-5 ">
+                    IELTS
+                  </p>
                 </div>
                 <div>
-                  <p className="font-inter font-normal text-sm leading-5">{university.tests.PTE}</p>
-                  <p className="font-inter font-semibold text-sm leading-5 ">PTE</p>
+                  <p className="font-inter font-normal text-sm leading-5">
+                    {university.tests.PTE}
+                  </p>
+                  <p className="font-inter font-semibold text-sm leading-5 ">
+                    PTE
+                  </p>
                 </div>
                 <div>
                   <p className="font-inter font-normal text-sm leading-5">
                     {university.tests.TOEFL}
                   </p>
-                  <p className="font-inter font-semibold text-sm leading-5 ">TOEFL</p>
+                  <p className="font-inter font-semibold text-sm leading-5 ">
+                    TOEFL
+                  </p>
                 </div>
                 <div>
                   <p className="font-inter font-normal text-sm leading-5">
                     {university.tests.Duolingo}
                   </p>
-                  <p className="font-inter font-semibold text-sm leading-5 ">Duolingo</p>
+                  <p className="font-inter font-semibold text-sm leading-5 ">
+                    Duolingo
+                  </p>
                 </div>
               </div>
 
@@ -192,42 +203,61 @@ export default function UniversityDetailPage({ params }) {
               <div className="space-y-2 mt-4 text-sm text-primaryheading leading-5 ">
                 <div className="flex border-b-2 justify-between space-y-2 font-normal">
                   <p>
-                    <span className="font-semibold text-[#190459]">GPA:</span> {university.GPA}
+                    <span className="font-semibold text-[#190459]">GPA:</span>{" "}
+                    {university.GPA}
                   </p>
                   <p className="flex items-center gap-1">
                     <RankStar />
-                    <span className="font-semibold text-[#190459]"> Rank:</span> {university.Rank}
+                    <span className="font-semibold text-[#190459]">
+                      {" "}
+                      Rank:
+                    </span>{" "}
+                    {university.Rank}
                   </p>
                   <p className="flex items-center gap-1">
                     <BacklogsIcon />
-                    <span className="font-semibold text-[#190459]">Backlogs:</span>{' '}
+                    <span className="font-semibold text-[#190459]">
+                      Backlogs:
+                    </span>{" "}
                     {university.Backlogs}
                   </p>
                 </div>
                 <div className="flex border-b-2 justify-between space-y-2 font-normal">
                   <p className="flex items-center gap-1">
                     <WorldRankIcon />
-                    <span className="font-semibold text-[#190459]">World Rank:</span>{' '}
+                    <span className="font-semibold text-[#190459]">
+                      World Rank:
+                    </span>{" "}
                     {university.WorldRank}
                   </p>
                   <p className="flex items-center gap-1">
                     {/* <UsIcon /> */}
-                    <span className="font-semibold text-[#190459]">US News Rank:</span>{' '}
+                    <span className="font-semibold text-[#190459]">
+                      US News Rank:
+                    </span>{" "}
                     {university.USNewsRank}
                   </p>
                 </div>
                 <div className="grid grid-cols-2 lg:grid-cols-3 border-b-2  space-y-2 font-normal">
                   <p className="flex items-center gap-1 ">
                     <PrivateIcon />
-                    <span className="font-semibold text-[#190459]">Type:</span> {university.Type}
+                    <span className="font-semibold text-[#190459]">
+                      Type:
+                    </span>{" "}
+                    {university.Type}
                   </p>
                   <p className="flex items-center justify-end lg:justify-center gap-1 ">
                     <GreIcon />
-                    <span className="font-semibold text-[#190459]">GRE:</span> {university.GRE}
+                    <span className="font-semibold text-[#190459]">
+                      GRE:
+                    </span>{" "}
+                    {university.GRE}
                   </p>
                   <p className="flex items-center lg:justify-end gap-1 ">
                     <CreditsIcon />
-                    <span className="font-semibold text-[#190459]">Credits:</span>{' '}
+                    <span className="font-semibold text-[#190459]">
+                      Credits:
+                    </span>{" "}
                     {university.Credits}
                   </p>
                 </div>

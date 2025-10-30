@@ -1,6 +1,7 @@
-import SpotlightCard from '@/components/SpotlightCard';
-import { BookOpen, Clock } from 'lucide-react';
-import React from 'react';
+import SpotlightCard from "@/components/SpotlightCard";
+import { Clock } from "lucide-react";
+import CourseCardIcon from "@/public/home/CourseCardIcon";
+import React from "react";
 
 const CourseCard = ({ title, duration, price, onUniversityClick }) => {
   const handleButtonClicked = () => {
@@ -14,7 +15,8 @@ const CourseCard = ({ title, duration, price, onUniversityClick }) => {
       className="custom-spotlight-card bg-white"
       spotlightColor="rgba(199, 4, 76, 0.3)"
     >
-      <h3 className="text-lg font-inter font-semibold text-primarycolor  mb-2 text-start">
+      {/* Title */}
+      <h3 className="text-lg font-inter font-semibold text-[#C7044C] mb-2 text-start">
         {title}
       </h3>
 
@@ -30,8 +32,8 @@ const CourseCard = ({ title, duration, price, onUniversityClick }) => {
           onClick={handleButtonClicked}
           className="flex items-center gap-2 text-[#c8004b] border border-[#c8004b] text-sm font-medium px-2.5 py-1.5 rounded-md hover:bg-[#c8004b] hover:text-white transition-colors"
         >
-          <BookOpen className="w-4 h-4" />
-          Universities: ${price}
+          Courses:
+          <CourseCardIcon className="w-4 h-4" />${price}
         </button>
       </div>
     </SpotlightCard>

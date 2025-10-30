@@ -1,11 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Search } from 'lucide-react';
-import { useRouter } from 'next/navigation'; // ✅ import router
+import { useState } from "react";
+import { Search } from "lucide-react";
+import { useRouter } from "next/navigation"; // ✅ import router
 
-export default function SearchBar({ placeholder = 'Search university by name, program, country' }) {
-  const [query, setQuery] = useState('');
+export default function SearchBar({
+  placeholder = "Search university by name, program, country",
+}) {
+  const [query, setQuery] = useState("");
   const router = useRouter();
 
   const handleSubmit = (e) => {
@@ -35,7 +37,7 @@ export default function SearchBar({ placeholder = 'Search university by name, pr
       </div>
       <button
         type="submit"
-        className="bg-[#c8004b] hover:bg-[#a1003e] truncate cursor-pointer text-white text-sm font-semibold px-6 py-2.5 rounded-md transition-colors duration-200"
+        className="bg-[#c8004b] !w-[130px] hover:bg-[#a1003e] cursor-pointer text-white text-xs md:text-sm font-semibold  rounded-md transition-colors duration-200"
       >
         Search now!
       </button>

@@ -1,8 +1,8 @@
-'use client';
-import React from 'react';
-import ScrollingMarquee from '../ScrollingMarquee';
-import SearchBar from '@/app/(components)/ui/SearchInput';
-import { Search } from 'lucide-react';
+"use client";
+import React from "react";
+import ScrollingMarquee from "../ScrollingMarquee";
+import SearchBar from "@/app/(components)/ui/SearchInput";
+import { Search } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -17,10 +17,12 @@ const Hero = () => {
         <div className="relative max-w-7xl mx-auto text-center">
           {/* Heading */}
           <h1 className="text-3xl md:text-[44px] font-semibold text-primaryheading">
-            Find the Best University <span className="text-[#C8102E]">For You — Instantly</span>
+            Find the Best University
+            <span className="text-[#C8102E]">For You — Instantly</span>
           </h1>
           <p className="text-secondarytext mt-3">
-            Find useful information, apply, get visa and even a job all in one place
+            Find useful information, apply, get visa and even a job all in one
+            place
           </p>
 
           {/* Search Bar */}
@@ -35,7 +37,7 @@ const Hero = () => {
                   type="text"
                   // value={query}
                   // onChange={(e) => setQuery(e.target.value)}
-                  placeholder={'Search university by name, program, country'}
+                  placeholder={"Search university by name, program, country"}
                   className="w-full bg-transparent border-none focus:outline-none text-gray-700 text-sm py-4.5"
                 />
               </div>
