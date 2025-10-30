@@ -3,10 +3,16 @@
 import { ArrowRight, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import Button from '../ui/Button';
+import { useRouter } from 'next/navigation';
 
 const Home2Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
+  const handleClick = () => {
+    router.push('/'); // 👈 Redirect to /about page
+  };
   const navLinks = [
     { name: 'Features', href: '#features' },
     { name: 'FAQs', href: '#faqs' },
@@ -36,7 +42,7 @@ const Home2Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <button
+            {/* <button
               className="bg-[#FFFFFF3D] flex items-center gap-2 px-6 py-2.5 rounded-lg font-medium text-sm text-Primarytext transition-all duration-200 hover:scale-105"
               style={{
                 boxShadow: '0px 0.98px 1.96px 0px #1018280D',
@@ -48,7 +54,9 @@ const Home2Header = () => {
 
             <button className="px-6 py-2.5 bg-[#C7044C] text-white rounded-lg font-medium text-sm hover:bg-[#a4003d] transition-all duration-200 hover:scale-105 shadow-md">
               Get Started
-            </button>
+            </button> */}
+            <Button text={'Login'} rightIcon={<ArrowRight className="w-4 h-4 text-white" />} />
+            <Button onClick={handleClick} text={'Get Started'} />
           </div>
 
           <button

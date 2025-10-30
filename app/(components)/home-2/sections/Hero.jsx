@@ -4,7 +4,8 @@ import React, { useEffect, useRef } from 'react';
 import Button from '@/app/(components)/ui/Button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
+import LandingButton from '../../ui/LandingButton';
+import { useRouter } from 'next/navigation';
 // Register GSAP plugin
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -12,6 +13,11 @@ if (typeof window !== 'undefined') {
 
 const Hero = () => {
   const heroRef = useRef(null);
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/'); // 👈 Redirect to /about page
+  };
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -39,7 +45,7 @@ const Hero = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section 
+      <section
         ref={heroRef}
         className="relative h-screen flex items-center justify-start overflow-hidden origin-top"
         style={{ transformOrigin: 'top center' }}
@@ -65,12 +71,13 @@ const Hero = () => {
             <p className="text-lg md:text-xl font-medium text-gray-100">
               Alex is a Real Get2Uni Member
             </p>
-            <Button 
+            {/* <Button 
               text="Get Started" 
               bg="bg-white" 
               color="text-black" 
               cn="hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg"
-            />
+            /> */}
+            <LandingButton onClick={handleClick} text="Get Started" />
           </div>
         </div>
       </section>

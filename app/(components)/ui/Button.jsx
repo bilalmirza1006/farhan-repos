@@ -75,7 +75,7 @@
 
 // export default Button;
 
-const Button = ({ text, icon, color, bg, cn, ...rest }) => {
+const Button = ({ text, icon, rightIcon, color, bg, cn, ...rest }) => {
   return (
     <button
       {...rest}
@@ -85,10 +85,11 @@ const Button = ({ text, icon, color, bg, cn, ...rest }) => {
         bg-[rgba(154,154,154,0.4)] text-white backdrop-blur-md
         transition-transform duration-300 ease-out hover:scale-[0.97] ${cn}`}
     >
-      {/* Text + Icon */}
+      {/* Text + Icons */}
       <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
         {icon && <span className="text-lg">{icon}</span>}
         {text}
+        {rightIcon && <span className="text-lg">{rightIcon}</span>}
       </span>
 
       {/* Curved wave fill rising upward */}
