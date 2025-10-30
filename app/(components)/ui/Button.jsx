@@ -79,10 +79,9 @@ const Button = ({ text, icon, rightIcon, color, bg, cn, ...rest }) => {
   return (
     <button
       {...rest}
-      className={`group relative overflow-hidden py-3 px-6 rounded-md
+      className={`group relative overflow-hidden py-3 px-6 rounded-md ${bg ? bg : 'bg-primarycolor'} ${color ? color : 'text-white'}
         flex justify-center items-center gap-2 cursor-pointer
         font-medium text-sm md:text-base
-        bg-[rgba(154,154,154,0.4)] text-white backdrop-blur-md
         transition-transform duration-300 ease-out hover:scale-[0.97] ${cn}`}
     >
       {/* Text + Icons */}

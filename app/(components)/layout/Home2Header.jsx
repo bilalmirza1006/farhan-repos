@@ -44,21 +44,27 @@ const Home2Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            {/* <button
-              className="bg-[#FFFFFF3D] flex items-center gap-2 px-6 py-2.5 rounded-lg font-medium text-sm text-Primarytext transition-all duration-200 hover:scale-105"
-              style={{
-                boxShadow: '0px 0.98px 1.96px 0px #1018280D',
-              }}
-            >
-              Login
-              <ArrowRight className="w-4 h-4 text-black" />
-            </button>
+              <Link href="https://portal.get2uni.com/login">
+                <Button
+                  text="Login"
+                  rightIcon={<ArrowRight className="w-4 h-4 text-black" />}
+                  bg="bg-[#FFFFFF3D]"
+                  color="text-Primarytext"
+                  cn="py-2.5 px-6 rounded-lg text-sm hover:scale-105 transition-all duration-200"
+                  style={{
+                    boxShadow: '0px 0.98px 1.96px 0px #1018280D',
+                }}
+              />
+            </Link>
 
-            <button className="px-6 py-2.5 bg-[#C7044C] text-white rounded-lg font-medium text-sm hover:bg-[#a4003d] transition-all duration-200 hover:scale-105 shadow-md">
-              Get Started
-            </button> */}
-            <Button text={'Login'} rightIcon={<ArrowRight className="w-4 h-4 text-white" />} />
-            <LandingHeader onClick={handleClick} text={'Get Started'} />
+            <Link href="https://portal.get2uni.com/signup">
+              <Button
+                text="Get Started"
+                bg="bg-[#C7044C]"
+                color="text-white"
+                cn="py-2.5 px-6 rounded-lg text-sm hover:bg-[#a4003d] hover:scale-105 transition-all duration-200 shadow-md"
+              />
+            </Link>
           </div>
 
           <button
@@ -105,25 +111,27 @@ const Home2Header = () => {
           </nav>
 
           <div className="flex flex-col gap-3 px-6 py-6 border-t border-gray-100 bg-white">
-            <button
-              className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg font-medium text-sm text-Primarytext transition-all duration-200"
-              style={{
-                background: '#FFFFFF3D',
-                boxShadow: '0px 0.98px 1.96px 0px #1018280D',
-                border: '1px solid #E5E7EB',
-              }}
-              onClick={() => setMenuOpen(false)}
-            >
-              Login
-              <ArrowRight className="w-4 h-4 text-black" />
-            </button>
+          <Link href="https://portal.get2uni.com/login">
+                <Button
+                  text="Login"
+                  rightIcon={<ArrowRight className="w-4 h-4 text-black" />}
+                  bg="bg-[#FFFFFF3D]"
+                  color="text-Primarytext"
+                  cn="py-2.5 px-6 rounded-lg text-sm hover:scale-105 transition-all duration-200"
+                  style={{
+                    boxShadow: '0px 0.98px 1.96px 0px #1018280D',
+                }}
+              />
+            </Link>
 
-            <button
-              className="w-full px-6 py-3 bg-[#C7044C] text-white rounded-lg font-medium text-sm hover:bg-[#a4003d] transition-all duration-200 shadow-md"
-              onClick={() => setMenuOpen(false)}
-            >
-              Get Started
-            </button>
+            <Link href="https://portal.get2uni.com/signup">
+              <Button
+                text="Get Started"
+                bg="bg-[#C7044C]"
+                color="text-white"
+                cn="py-2.5 px-6 rounded-lg text-sm hover:bg-[#a4003d] hover:scale-105 transition-all duration-200 shadow-md"
+              />
+            </Link>
 
           </div>
         </div>
