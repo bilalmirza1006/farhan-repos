@@ -144,7 +144,7 @@ const InstantFindLayout = () => {
       {/* Header */}
       <div className="max-w-[1560px] bg-white drop-shadow-sm max-h-16 py-3 px-6 flex items-center justify-between mx-auto mt-18 ">
         <div className="font-semibold font-inter text-lg md:text-xl text-Primarytext">
-          We Found <span className="text-[#C7044C]">{universities.length} Courses</span>
+          We Found <span className="text-primarycolor ">{universities.length} Courses</span>
         </div>
         <div className="flex gap-5">
           <div className="hidden md:block flex bg-[#F0F0F0B2] rounded-[5.4px] p-1">

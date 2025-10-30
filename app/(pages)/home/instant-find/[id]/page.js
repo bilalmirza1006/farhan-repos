@@ -104,7 +104,7 @@ const page = ({ params }) => {
               <div className="px-5 py-3 font-inter font-medium text-primaryheading text-lg bg-[#F2F2F266] rounded-md">
                 {university.deadline}
               </div>
-              <div className="px-5 py-3 font-inter font-medium text-[#C7044C] text-lg bg-[#F2F2F266] rounded-md">
+              <div className="px-5 py-3 font-inter font-medium text-primarycolor  text-lg bg-[#F2F2F266] rounded-md">
                 {university.daysLeft}
               </div>
             </div>
@@ -128,7 +128,7 @@ const page = ({ params }) => {
                 <span className="bg-gray-100 text-sm px-3 py-1 rounded-md">
                   {university.deadline}
                 </span>
-                <span className="bg-red-100 text-[#C7044C] text-sm px-3 py-1 rounded-md">
+                <span className="bg-red-100 text-primarycolor  text-sm px-3 py-1 rounded-md">
                   {university.daysLeft}
                 </span>
               </div> */}

@@ -14,7 +14,9 @@ const CourseCard = ({ title, duration, price, onUniversityClick }) => {
       className="custom-spotlight-card bg-white"
       spotlightColor="rgba(199, 4, 76, 0.3)"
     >
-      <h3 className="text-lg font-inter font-semibold text-[#C7044C] mb-2 text-start">{title}</h3>
+      <h3 className="text-lg font-inter font-semibold text-primarycolor  mb-2 text-start">
+        {title}
+      </h3>
 
       {/* Duration */}
       <div className="flex font-inter items-center text-sm text-gray-500 mb-3.5">

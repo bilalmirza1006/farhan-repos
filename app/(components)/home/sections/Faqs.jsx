@@ -43,7 +43,7 @@ export default function FaqSection() {
     <section className="mt-20 max-w-[1560px] mx-auto">
       {/* Heading */}
       <div className="text-center mb-10">
-        <p className="font-inter text-[#C7044C] text-sm font-semibold uppercase tracking-wide">
+        <p className="font-inter text-primarycolor  text-sm font-semibold uppercase tracking-wide">
           FAQ’s
         </p>
         <p className="font-inter text-2xl md:text-[38px] font-bold leading-14 text-primaryheading mt-3">
@@ -110,7 +110,7 @@ export default function FaqSection() {
         <Button
           cn="!border-white !border hover:text-white"
           text="Sign Up Now!"
-          color="text-[#C7044C]"
+          color="text-primarycolor "
           bg="bg-white"
         />
       </div>

@@ -1,33 +1,33 @@
-import React from "react";
-import Button from "@/app/(components)/ui/Button";
-import Image from "next/image";
-import studentImage from "@/public/about/why-us.png";
+import React from 'react';
+import Button from '@/app/(components)/ui/Button';
+import Image from 'next/image';
+import studentImage from '@/public/about/why-us.png';
 
 const ChooseUs = () => {
   const features = [
     {
-      icon: "💻",
-      title: "100% Online & Free",
+      icon: '💻',
+      title: '100% Online & Free',
       description:
-        "Explore universities, courses, and countries anytime — completely free and accessible from anywhere.",
+        'Explore universities, courses, and countries anytime — completely free and accessible from anywhere.',
     },
     {
-      icon: "🧭",
-      title: "No Pushy Sales",
+      icon: '🧭',
+      title: 'No Pushy Sales',
       description:
         "You're in full control. No pressure, no hidden agendas — just honest guidance and useful tools.",
     },
     {
-      icon: "🔄",
-      title: "Always Updated",
+      icon: '🔄',
+      title: 'Always Updated',
       description:
-        "We keep our university and course data regularly updated so you always get the latest and most accurate information.",
+        'We keep our university and course data regularly updated so you always get the latest and most accurate information.',
     },
     {
-      icon: "🎓",
-      title: "Student-First Approach",
+      icon: '🎓',
+      title: 'Student-First Approach',
       description:
-        "Built with students in mind. Inspired by platforms like Insta, but designed to be more open, helpful, and easy to use.",
+        'Built with students in mind. Inspired by platforms like Insta, but designed to be more open, helpful, and easy to use.',
     },
   ];
   return (
@@ -35,18 +35,17 @@ const ChooseUs = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <p className="font-inter text-[#C7044C] text-sm font-semibold uppercase tracking-wide">
+          <p className="font-inter text-primarycolor  text-sm font-semibold uppercase tracking-wide">
             WHY STUDENTS TRUST GET2UNI
           </p>
           <h2 className="text-3xl md:text-5xl font-bold mb-8 mt-3">
-            <span className="text-[#190459]">WHY</span>{" "}
-            <span className="text-[#C7044C]">CHOOSE US</span>
+            <span className="text-[#190459]">WHY</span>{' '}
+            <span className="text-primarycolor ">CHOOSE US</span>
           </h2>
-          <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-            Choosing the right study abroad platform matters. At Get2Uni, we
-            focus on making your journey smooth, transparent, and truly
-            student-focused — giving you the tools, freedom, and support to make
-            the best decision for your future.
+          <p className="text-secondarytext text-base md:text-lg max-w-3xl mx-auto">
+            Choosing the right study abroad platform matters. At Get2Uni, we focus on making your
+            journey smooth, transparent, and truly student-focused — giving you the tools, freedom,
+            and support to make the best decision for your future.
           </p>
         </div>
 
@@ -55,12 +54,7 @@ const ChooseUs = () => {
           {/* Image */}
           <div className="flex justify-center lg:flex-[1.5]">
             <div className="relative w-full bg-gray-200 rounded-lg overflow-hidden">
-              <Image
-                src={studentImage}
-                alt="Why Choose Us"
-                fill
-                className="object-cover"
-              />
+              <Image src={studentImage} alt="Why Choose Us" fill className="object-cover" />
             </div>
           </div>
 
@@ -79,7 +73,7 @@ const ChooseUs = () => {
                     <h3 className="font-bold text-lg mb-2 group-hover:text-white">
                       {feature.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-gray-600 group-hover:text-pink-100">
+                    <p className="text-sm leading-relaxed text-secondarytext group-hover:text-pink-100">
                       {feature.description}
                     </p>
                   </div>

@@ -23,9 +23,9 @@ export default function ProgramDetails({ title, children, isOpen, onToggle }) {
       >
         <span className="font-inter font-semibold text-primaryheading">{title}</span>
         {isOpen ? (
-          <Minus size={18} className="text-[#C7044C]" />
+          <Minus size={18} className="text-primarycolor " />
         ) : (
-          <Plus size={18} className="text-[#C7044C]" />
+          <Plus size={18} className="text-primarycolor " />
         )}
       </button>
 

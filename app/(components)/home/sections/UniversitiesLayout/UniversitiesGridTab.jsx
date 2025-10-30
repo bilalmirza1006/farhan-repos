@@ -127,7 +127,7 @@ const UniversitiesGridTab = ({ data }) => {
       {/* Header */}
       <div className="w-full bg-white drop-shadow-sm max-h-16 py-3 px-6 flex items-center justify-between ">
         <div className="font-semibold font-inter text-xl text-Primarytext">
-          We Found <span className="text-[#C7044C]">{data.length} Universities</span>
+          We Found <span className="text-primarycolor ">{data.length} Universities</span>
         </div>
 
         {/* Mobile Filter Button */}

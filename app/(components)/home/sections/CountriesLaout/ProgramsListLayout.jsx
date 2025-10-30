@@ -70,13 +70,13 @@ export default function ProgramsListLayout() {
   return (
     <div className="bg-white rounded-[10px] drop-shadow-md p-6 mb-5">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
+      <div className="flex items-center gap-2 text-sm text-secondarytext mb-6">
         <span
           onClick={() => {
             setSelectedProgram(null);
             setSelectedCourse(null);
           }}
-          className="cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition"
+          className="cursor-pointer font-inter font-semibold md:text-lg text-primarycolor  transition"
         >
           Programs
         </span>
@@ -86,7 +86,7 @@ export default function ProgramsListLayout() {
             <ChevronRight size={14} />
             <span
               onClick={() => setSelectedCourse(null)}
-              className="cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition"
+              className="cursor-pointer font-inter font-semibold md:text-lg text-primarycolor  transition"
             >
               {selectedProgram}
             </span>
@@ -94,8 +94,8 @@ export default function ProgramsListLayout() {
             <span
               className={`${
                 selectedCourse
-                  ? 'cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition'
-                  : 'cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition'
+                  ? 'cursor-pointer font-inter font-semibold md:text-lg text-primarycolor  transition'
+                  : 'cursor-pointer font-inter font-semibold md:text-lg text-primarycolor  transition'
               }`}
             >
               {selectedCourse ? 'Details' : 'Courses'}
@@ -132,7 +132,7 @@ export default function ProgramsListLayout() {
                 key={program.id}
                 className="p-5 rounded-[12px] border border-[#E3E3E3] drop-shadow-sm hover:shadow-md transition-all "
               >
-                <h3 className="font-inter font-semibold text-lg text-[#C7044C] leading-5">
+                <h3 className="font-inter font-semibold text-lg text-primarycolor  leading-5">
                   {program.name}
                 </h3>
                 <p className="text-xs text-Lighttext font-inter font-medium mt-1">
@@ -141,7 +141,7 @@ export default function ProgramsListLayout() {
                 <div className="flex justify-end  mt-3">
                   <button
                     onClick={() => handleViewCourses(program.name)}
-                    className="border border-[#C7044C] text-[#C7044C] text-sm font-medium rounded-[6px] px-3 py-1.5 flex items-center gap-3 hover:bg-pink-50 transition-all"
+                    className="border border-[#C7044C] text-primarycolor  text-sm font-medium rounded-[6px] px-3 py-1.5 flex items-center gap-3 hover:bg-pink-50 transition-all"
                   >
                     <span>Courses:</span>
                     <span>{program.courses}</span>
@@ -179,7 +179,7 @@ export default function ProgramsListLayout() {
                 key={course.id}
                 className="p-5 rounded-[12px] border border-[#E3E3E3] drop-shadow-sm hover:shadow-md transition-all"
               >
-                <h4 className="font-inter font-semibold text-lg text-[#C7044C] leading-5">
+                <h4 className="font-inter font-semibold text-lg text-primarycolor  leading-5">
                   {course.title}
                 </h4>
                 <p className="text-xs text-Lighttext font-inter font-medium mt-1">
@@ -210,7 +210,7 @@ export default function ProgramsListLayout() {
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-5 border bg-white rounded-[8px] drop-shadow-sm p-5 mb-5">
             <div>
-              <h2 className="font-inter font-bold md:text-2xl text-[#C7044C] leading-5 mb-2">
+              <h2 className="font-inter font-bold md:text-2xl text-primarycolor  leading-5 mb-2">
                 {selectedProgram}
               </h2>
               <p className="text-xs text-Lighttext font-inter font-medium ">Duration: 1–4 Year</p>
@@ -219,7 +219,7 @@ export default function ProgramsListLayout() {
               <Button
                 text="Shortlist"
                 icon={<Bookmark />}
-                cn={'!border-[#C7044C] !text-[#C7044C] hover:bg-pink-50'}
+                cn={'!border-[#C7044C] !text-primarycolor  hover:bg-pink-50'}
                 bg={'bg-white border'}
               />
               <Button text="Apply Now" cn={' !text-white'} icon={<CircleCheck />} />

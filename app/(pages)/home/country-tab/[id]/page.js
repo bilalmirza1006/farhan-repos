@@ -100,7 +100,7 @@ const page = async ({ params }) => {
               <div className="px-3 py-2 font-inter font-medium text-primaryheading text-xs md:text-base lg:text:lg bg-white rounded-md">
                 {university.deadline}
               </div>
-              <div className="px-3 py-2 font-inter font-medium text-[#C7044C] text-xs md:text-base lg:text:lg bg-white rounded-md">
+              <div className="px-3 py-2 font-inter font-medium text-primarycolor  text-xs md:text-base lg:text:lg bg-white rounded-md">
                 {university.daysLeft}
               </div>
             </div>

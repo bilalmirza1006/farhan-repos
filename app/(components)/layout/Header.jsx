@@ -16,7 +16,7 @@ export const Header = () => {
         {/* Left: Logo & Hamburger */}
         <div className="flex items-center  w-full md:justify-center  gap-3 ">
           <button
-            className="text-[#C7044C] text-2xl md:hidden"
+            className="text-primarycolor  text-2xl md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <X /> : <Menu />}
@@ -123,7 +123,7 @@ export const Header = () => {
         </nav>
 
         {/* <div className="flex flex-col gap-2 mt-6 px-6">
-                    <button className="text-gray-600 border border-gray-300 py-2 rounded-md hover:text-[#C8102E]">
+                    <button className="text-secondarytext border border-gray-300 py-2 rounded-md hover:text-[#C8102E]">
                         Sign up
                     </button>
                     <button className="bg-[#C8102E] text-white py-2 rounded-md hover:bg-[#a20d26]">

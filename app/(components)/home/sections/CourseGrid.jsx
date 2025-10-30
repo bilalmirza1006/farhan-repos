@@ -63,7 +63,7 @@ const CourseGrid = ({ data, onUniversityClick }) => {
       <div className="w-full bg-white drop-shadow-sm max-h-16 py-3 px-6 flex items-center justify-between">
         {' '}
         <div className="font-semibold font-inter text-xl text-Primarytext">
-          We Found <span className="text-[#C7044C]">{data.length} Coursesdd</span>{' '}
+          We Found <span className="text-primarycolor ">{data.length} Coursesdd</span>{' '}
         </div>
         {/* Mobile Filter Button */}
         <button

@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { ArrowRight, Menu, X } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
+import { ArrowRight, Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const Home2Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Features", href: "#features" },
-    { name: "FAQs", href: "#faqs" },
-    { name: "Guides", href: "#guides" },
+    { name: 'Features', href: '#features' },
+    { name: 'FAQs', href: '#faqs' },
+    { name: 'Guides', href: '#guides' },
   ];
 
   return (
@@ -25,7 +25,11 @@ const Home2Header = () => {
 
           <nav className="hidden md:flex items-center space-x-8 bg-[#FFFFFF3D] text-black px-4 py-2 rounded-lg">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="text-black hover:text-[#C7044C] font-medium text-sm transition-colors duration-200">
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-black hover:text-primarycolor  font-medium text-sm transition-colors duration-200"
+              >
                 {link.name}
               </Link>
             ))}
@@ -33,9 +37,9 @@ const Home2Header = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <button
-              className="bg-[#FFFFFF3D] flex items-center gap-2 px-6 py-2.5 rounded-lg font-medium text-sm text-gray-900 transition-all duration-200 hover:scale-105"
+              className="bg-[#FFFFFF3D] flex items-center gap-2 px-6 py-2.5 rounded-lg font-medium text-sm text-Primarytext transition-all duration-200 hover:scale-105"
               style={{
-                boxShadow: "0px 0.98px 1.96px 0px #1018280D",
+                boxShadow: '0px 0.98px 1.96px 0px #1018280D',
               }}
             >
               Login
@@ -47,7 +51,10 @@ const Home2Header = () => {
             </button>
           </div>
 
-          <button className="md:hidden text-gray-700 hover:text-[#C7044C] transition-colors" onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            className="md:hidden text-gray-700 hover:text-primarycolor  transition-colors"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -55,20 +62,23 @@ const Home2Header = () => {
 
       <div
         className={`fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
-          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
         onClick={() => setMenuOpen(false)}
       ></div>
 
       <div
         className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="flex flex-col h-full min-h-screen">
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
             <img src="/main-logo.png" alt="Logo" className="h-8" />
-            <button className="text-gray-700 hover:text-[#C7044C]" onClick={() => setMenuOpen(false)}>
+            <button
+              className="text-gray-700 hover:text-primarycolor "
+              onClick={() => setMenuOpen(false)}
+            >
               <X className="w-6 h-6" />
             </button>
           </div>
@@ -78,7 +88,7 @@ const Home2Header = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-[#C7044C] hover:bg-gray-50 font-medium text-base py-3 px-4 rounded-lg transition-colors duration-200"
+                className="text-gray-700 hover:text-primarycolor  hover:bg-gray-50 font-medium text-base py-3 px-4 rounded-lg transition-colors duration-200"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.name}
@@ -88,11 +98,11 @@ const Home2Header = () => {
 
           <div className="flex flex-col gap-3 px-6 py-6 border-t border-gray-100 bg-white">
             <button
-              className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg font-medium text-sm text-gray-900 transition-all duration-200"
+              className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-lg font-medium text-sm text-Primarytext transition-all duration-200"
               style={{
-                background: "#FFFFFF3D",
-                boxShadow: "0px 0.98px 1.96px 0px #1018280D",
-                border: "1px solid #E5E7EB",
+                background: '#FFFFFF3D',
+                boxShadow: '0px 0.98px 1.96px 0px #1018280D',
+                border: '1px solid #E5E7EB',
               }}
               onClick={() => setMenuOpen(false)}
             >

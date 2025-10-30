@@ -102,7 +102,7 @@ const UniversityGrid = () => {
     <>
       <div className="w-full bg-white drop-shadow-sm max-h-16 py-3 px-6 flex items-center justify-between ">
         <div className="font-semibold font-inter text-xl text-Primarytext">
-          Computer Science <span className="text-[#C7044C]"> :120 Universities</span>
+          Computer Science <span className="text-primarycolor "> :120 Universities</span>
         </div>
         {/* Mobile Filter Button */}
         <button

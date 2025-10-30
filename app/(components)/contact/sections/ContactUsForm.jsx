@@ -30,9 +30,9 @@ const ContactUsForm = () => {
       <div className="text-center mb-12 md:mb-16">
         <h2 className="text-3xl md:text-5xl font-bold mb-8 mt-3">
           <span className="text-[#190459]">CONTACT</span>{' '}
-          <span className="text-[#C7044C]">US FORM</span>
+          <span className="text-primarycolor ">US FORM</span>
         </h2>
-        <p className="text-gray-600 text-sm max-w-3xl mx-auto">
+        <p className="text-secondarytext text-sm max-w-3xl mx-auto">
           Have questions about studying abroad, finding the right university, or using our platform?
           Our team is here to help you every step of the way.
         </p>
@@ -51,8 +51,10 @@ const ContactUsForm = () => {
                   <Image src={info.icon} width={50} height={50} alt={info.title} />
 
                   <div>
-                    <h3 className="text-[#C7044C] font-semibold uppercase text-sm">{info.title}</h3>
-                    <p className="text-gray-600 whitespace-pre-line">{info.description}</p>
+                    <h3 className="text-primarycolor  font-semibold uppercase text-sm">
+                      {info.title}
+                    </h3>
+                    <p className="text-secondarytext whitespace-pre-line">{info.description}</p>
                   </div>
                 </div>
               ))}
@@ -68,7 +70,7 @@ const ContactUsForm = () => {
             <form className="flex flex-col gap-4">
               {/* First Name */}
               <div className="flex items-center border space-x-2 border-gray-300 rounded-md px-3 py-2">
-                <User className="text-[#C7044C] w-5 h-5 " />
+                <User className="text-primarycolor  w-5 h-5 " />
                 <input
                   type="text"
                   placeholder="First Name"
@@ -78,7 +80,7 @@ const ContactUsForm = () => {
 
               {/* Last name */}
               <div className="flex items-center border space-x-2 border-gray-300 rounded-md px-3 py-2">
-                <User className="text-[#C7044C] w-5 h-5" />
+                <User className="text-primarycolor  w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Last Name"
@@ -89,7 +91,7 @@ const ContactUsForm = () => {
               {/* Email */}
               <div className="flex border border-gray-300 rounded-md px-3 py-2 space-x-2">
                 <div className="pt-1.5">
-                  <Message className="text-[#C7044C] w-5 h-5" />
+                  <Message className="text-primarycolor  w-5 h-5" />
                 </div>
                 <input
                   type="email"
@@ -101,7 +103,7 @@ const ContactUsForm = () => {
               {/* Message */}
               <div className="flex border border-gray-300 rounded-md px-3 py-2 space-x-2">
                 <div className="pt-1.5">
-                  <Message className="text-[#C7044C] w-5 h-5" />
+                  <Message className="text-primarycolor  w-5 h-5" />
                 </div>
                 <textarea
                   placeholder="Message"
