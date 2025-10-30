@@ -44,7 +44,7 @@ export default function ProjectsPartnersSection() {
     <section className="py-16 px-6 md:px-20 bg-[#F5F8FF] text-center">
       {/* Header */}
       <h2 className="text-3xl md:text-4xl font-bold text-Primarytext mb-4">
-        Real-Time <span className="text-primarycolor">Projects & Partners</span>
+        Real-Time <br /> <span className="text-primarycolor">Projects & Partners</span>
       </h2>
       <p className="text-secondarytext max-w-2xl mx-auto mb-12">
         Work on industry-relevant projects that build your portfolio and demonstrate your

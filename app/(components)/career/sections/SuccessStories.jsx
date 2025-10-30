@@ -8,7 +8,8 @@ const SuccessStories = () => {
       <div className="max-w-xl">
         <h2 className="text-3xl font-bold text-gray-800 mb-2">Success Stories</h2>
         <p className="text-gray-500">
-          Hear from students who transformed their careers with{' '}
+          Hear from students who transformed their careers with
+          <br />
           <span className="text-pink-600 font-semibold">Get2Uni</span>
         </p>
       </div>
