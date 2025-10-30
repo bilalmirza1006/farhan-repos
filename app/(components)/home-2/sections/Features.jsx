@@ -1,32 +1,52 @@
-import React from "react";
-import Button from "../../ui/Button";
+import React from 'react';
+import Button from '../../ui/Button';
+import LandingHeader from '../../ui/LandingHeader';
 
 const Features = () => {
   const featuresData = [
     {
-      title: "Start Studying Abroad",
-      features: ["Visa & Immigration Support", "Scholarships", "Pre-departure Support", "Ongoing Post-landing Support", "Application Assistance"],
-      buttonText: "Explore & Apply",
+      title: 'Start Studying Abroad',
+      features: [
+        'Visa & Immigration Support',
+        'Scholarships',
+        'Pre-departure Support',
+        'Ongoing Post-landing Support',
+        'Application Assistance',
+      ],
+      buttonText: 'Explore & Apply',
     },
     {
-      title: "Transfer Students",
-      features: ["Credit Transfer Done for You", "Financial Aid & Scholarships", "Application Assistance"],
-      buttonText: "Explore & Apply",
+      title: 'Transfer Students',
+      features: [
+        'Credit Transfer Done for You',
+        'Financial Aid & Scholarships',
+        'Application Assistance',
+      ],
+      buttonText: 'Explore & Apply',
     },
     {
-      title: "Career Accelerator Program",
-      features: ["Guaranteed Interview Opportunities", "Compare Yourself to the Market", "Training to Fill Your Knowledge Gaps"],
-      buttonText: "Get a Guaranteed Interview",
+      title: 'Career Accelerator Program',
+      features: [
+        'Guaranteed Interview Opportunities',
+        'Compare Yourself to the Market',
+        'Training to Fill Your Knowledge Gaps',
+      ],
+      buttonText: 'Get a Guaranteed Interview',
     },
   ];
 
   return (
     <section className="py-[100px] px-4 max-w-[1440px] mx-auto flex flex-col gap-10">
       <div className="max-w-[500px] text-center mx-auto items-center flex flex-col gap-3">
-        <h5 className="marker text-[var(--bg-primary-color)] text-sm font-semibold tracking-wide">Features</h5>
-        <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--heading)]">What You Gain</h3>
+        <h5 className="marker text-[var(--bg-primary-color)] text-sm font-semibold tracking-wide">
+          Features
+        </h5>
+        <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--heading)]">
+          What You Gain
+        </h3>
         <p className="text-Lighttext text-base">
-          Unlock expert support, smooth applications, and career-focused guidance — all in one place with Get2Uni.
+          Unlock expert support, smooth applications, and career-focused guidance — all in one place
+          with Get2Uni.
         </p>
       </div>
 
@@ -41,7 +61,13 @@ const Features = () => {
               <ul className="flex flex-col gap-2 mt-2">
                 {ft.features.map((item, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         d="M16.9947 5.15842C16.6758 5.51482 16.3756 5.87122 16.0943 6.22762C15.963 6.37768 15.8504 6.52775 15.7191 6.69657C15.9442 7.39061 16.0755 8.14093 16.0755 8.91C16.0568 12.8492 12.8492 16.0568 8.91 16.0568C4.97084 16.0568 1.76324 12.8492 1.76324 8.91C1.76324 4.97084 4.97084 1.76324 8.91 1.76324C10.1668 1.76324 11.3673 2.10088 12.399 2.66362C12.7554 2.30722 13.1118 1.96958 13.4869 1.63194L13.7308 1.4256C12.3427 0.525221 10.692 0 8.91 0C3.99543 0 0 3.99543 0 8.91C0 13.8246 3.99543 17.82 8.91 17.82C13.8246 17.82 17.82 13.8246 17.82 8.91C17.82 7.57819 17.5199 6.30265 16.9947 5.15842Z"
                         fill="#C7044C"
@@ -56,7 +82,7 @@ const Features = () => {
                 ))}
               </ul>
             </div>
-            <Button text={ft.buttonText} />
+            <LandingHeader text={ft.buttonText} />
           </article>
         ))}
       </section>

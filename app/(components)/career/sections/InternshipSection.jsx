@@ -6,6 +6,7 @@ import Sale from '@/public/icons/Sale';
 import Tech from '@/public/icons/Tech';
 import { Code, Cpu, Network, Brain, ServerCog, Landmark } from 'lucide-react';
 import Button from '../../ui/Button';
+import LandingHeader from '../../ui/LandingHeader';
 
 const internships = [
   {
@@ -71,7 +72,7 @@ export default function InternshipSection() {
       </p>
 
       <div className="w-full  mt-6 flex items-center justify-center">
-        <Button text={' Get Started'} />
+        <LandingHeader text={' Get Started'} />
       </div>
     </section>
   );

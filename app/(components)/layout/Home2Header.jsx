@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Button from '../ui/Button';
 import { useRouter } from 'next/navigation';
+import LandingHeader from '../ui/LandingHeader';
 
 const Home2Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,6 +18,7 @@ const Home2Header = () => {
     { name: 'Features', href: '#features' },
     { name: 'FAQs', href: '#faqs' },
     { name: 'Guides', href: '#guides' },
+    { name: 'Career', href: '/career' },
   ];
 
   return (
@@ -56,7 +58,7 @@ const Home2Header = () => {
               Get Started
             </button> */}
             <Button text={'Login'} rightIcon={<ArrowRight className="w-4 h-4 text-white" />} />
-            <Button onClick={handleClick} text={'Get Started'} />
+            <LandingHeader onClick={handleClick} text={'Get Started'} />
           </div>
 
           <button

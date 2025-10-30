@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import LandingButton from '../../ui/LandingButton';
 import { useRouter } from 'next/navigation';
+import BlurText from '../../animation/blurtext/BlurText';
 // Register GSAP plugin
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -66,7 +67,21 @@ const Hero = () => {
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-20">
           <div className="text-white max-w-2xl flex flex-col gap-6 items-start">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              No More Stress, <br /> just progress
+              <BlurText
+                text="No More Stress,"
+                className="inline-block mr-3"
+                animateBy="words"
+                direction="top"
+                delay={10}
+              />
+              <BlurText
+                text=" just progress"
+                className="inline-block mr-3"
+                animateBy="words"
+                direction="top"
+                delay={10}
+              />
+              {/* No More Stress, <br /> just progress */}
             </h1>
             <p className="text-lg md:text-xl font-medium text-gray-100">
               Alex is a Real Get2Uni Member

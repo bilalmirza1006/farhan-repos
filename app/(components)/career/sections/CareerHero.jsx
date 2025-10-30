@@ -1,6 +1,7 @@
 import React from 'react';
 import BlurText from '../../animation/blurtext/BlurText';
 import Button from '../../ui/Button';
+import LandingHeader from '../../ui/LandingHeader';
 
 function CareerHero() {
   return (
@@ -18,7 +19,14 @@ function CareerHero() {
       <div className="relative z-10 flex flex-col items-center justify-center text-center w-[940px]">
         <div className="mx-14">
           <h1 className="text-3xl md:text-[44px] font-semibold text-primaryheading">
-            Get2Uni: Your Pathway To a Global IT Career
+            {/* Get2Uni: Your Pathway To a Global IT Career */}
+            <BlurText
+              text="Get2Uni: Your Pathway To a Global IT Career"
+              className="inline-block mr-3"
+              animateBy="words"
+              direction="top"
+              delay={10}
+            />
           </h1>
         </div>
         <div>
@@ -28,7 +36,7 @@ function CareerHero() {
           </p>
         </div>
         <div className="mt-7">
-          <Button text={'Register Now'} />
+          <LandingHeader text={'Register Now'} />
         </div>
       </div>
     </div>

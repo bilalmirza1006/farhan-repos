@@ -5,6 +5,8 @@ import Button from '../../ui/Button';
 import Engagement from '@/public/icons/Engagement';
 import FinTech from '@/public/icons/FinTech';
 import Personalized from '@/public/icons/Personalized';
+import LandingHeader from '../../ui/LandingHeader';
+import LandingButton from '../../ui/LandingButton';
 
 export default function TransformJourneySection() {
   const features = [
@@ -57,7 +59,7 @@ export default function TransformJourneySection() {
             competitive tech landscape.
           </p>
           <div className="flex justify-center lg:justify-start">
-            <Button text="Get Started" bg="bg-white" color="text-primarycolor " />
+            <LandingButton text="Get Started" bg="bg-white" color="text-primarycolor " />
           </div>
         </div>
       </div>
