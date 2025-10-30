@@ -244,11 +244,10 @@ export default function ProgramPage({ isOpen }) {
             </span>
             {selectedCourse ? <ChevronRight size={14} /> : ''}
             <span
-              className={`${
-                selectedCourse
-                  ? 'cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition'
-                  : 'cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition'
-              }`}
+              className={`${selectedCourse
+                ? "cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition"
+                : "cursor-pointer font-inter font-semibold md:text-lg text-[#C7044C] transition"
+                }`}
             >
               {selectedCourse ? 'Details' : ''}
             </span>
@@ -260,11 +259,11 @@ export default function ProgramPage({ isOpen }) {
       {!selectedProgram ? (
         // Programs Grid
         <div>
-          {/* <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col md:flex-row justify-between mb-6">
             <h2 className="font-inter font-bold md:text-2xl text-primaryheading uppercase">
               List of Programs
             </h2>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center mt-6 md:mt-0  gap-6">
               <input
                 type="text"
                 placeholder="Search program"
@@ -272,11 +271,11 @@ export default function ProgramPage({ isOpen }) {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="border border-[#F3F3F3] bg-[#F3F3F3] rounded-[4px] p-3 text-sm w-84"
               />
-              <div className="font-inter font-semibold text-primaryheading text-base leading-5">
-                120 Programs
+              <div className="font-inter  font-semibold text-primaryheading text-base leading-5">
+                <p className="truncate">120 Programs</p>
               </div>
             </div>
-          </div> */}
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {filteredPrograms.map((program) => (

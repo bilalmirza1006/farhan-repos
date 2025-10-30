@@ -137,7 +137,7 @@ const UniversityGrid = () => {
       <div className="hidden md:block">
         <FilterBar
           options={UniversityOptions}
-          placeholder="Search University"
+          placeholder="Search Universities"
           icon={BrainCircuit}
         />
         <FilterBar
@@ -187,11 +187,10 @@ const UniversityGrid = () => {
                 <button
                   key={tab}
                   onClick={() => setActiveFilterTab(tab)}
-                  className={`w-[50%] text-sm py-2 rounded-md transition font-medium ${
-                    activeFilterTab === tab
-                      ? "bg-[#C7044C] text-white"
-                      : "text-gray-700 hover:bg-gray-100"
-                  }`}
+                  className={`w-[50%] text-sm py-2 rounded-md transition font-medium ${activeFilterTab === tab
+                    ? "bg-[#C7044C] text-white"
+                    : "text-gray-700 hover:bg-gray-100"
+                    }`}
                 >
                   {tab}
                 </button>
@@ -219,11 +218,10 @@ const UniversityGrid = () => {
                   <button
                     key={option.id}
                     onClick={() => toggleFilter(option.label)}
-                    className={`flex items-center gap-2 border rounded-md px-4 py-2 text-sm transition ${
-                      selectedFilters.includes(option.label)
-                        ? "bg-[#C7044C] text-white border-[#C7044C]"
-                        : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
-                    }`}
+                    className={`flex items-center gap-2 border rounded-md px-4 py-2 text-sm transition ${selectedFilters.includes(option.label)
+                      ? "bg-[#C7044C] text-white border-[#C7044C]"
+                      : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
+                      }`}
                   >
                     {activeFilterTab === "University" ? (
                       <BookOpen className="w-4 h-4" />

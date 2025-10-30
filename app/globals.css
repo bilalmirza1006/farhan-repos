@@ -142,8 +142,8 @@
   }
 } */
 /* ////////////////////////////////////////////// */
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -163,7 +163,7 @@
 
 /* === Global Theme Variables === */
 :root {
-  --font-roboto: "Roboto", sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
   /* Base radius */
   --radius: 0.625rem;
 
@@ -327,7 +327,7 @@
     overflow: hidden;
     border-radius: 16px;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -338,14 +338,14 @@
       transition: opacity 0.5s ease-in-out;
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 50px;
       height: 50px;
-      background-image: url("/home-2/play-icon.svg");
+      background-image: url('/home-2/play-icon.svg');
       background-size: contain;
       background-repeat: no-repeat;
       z-index: 1;
@@ -377,7 +377,7 @@
     overflow: hidden;
     border-radius: 16px;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -409,15 +409,41 @@
   position: relative;
   display: inline;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 10px;
     height: 10px;
     top: 50%;
     left: -15px;
-    background-image: url("/home-2/marker.svg");
+    background-image: url('/home-2/marker.svg');
     transform: translateY(-50%);
     background-size: contain;
     background-repeat: no-repeat;
   }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  45% {
+    transform: rotateX(-90deg);
+  }
+  55% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.flip-container {
+  perspective: 1000px; /* depth effect */
+}
+
+.flip-text {
+  display: inline-block;
+  transform-origin: center bottom;
+  animation: flip 3s ease-in-out infinite;
+  backface-visibility: hidden;
 }
