@@ -138,7 +138,7 @@ const ExploreUni = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-[100px] px-4 max-w-[1440px] mx-auto flex flex-col gap-10">
+    <section id="exploreuni" ref={containerRef} className="py-[100px] px-4 max-w-[1440px] mx-auto flex flex-col gap-10">
       <div className="max-w-[800px] text-center mx-auto flex flex-col items-center gap-3">
         <h5 className="text-[var(--bg-primary-color)] text-sm font-semibold tracking-wide marker">Explore, Connect & Enroll</h5>
         <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--heading)]">

@@ -46,7 +46,7 @@ const SuccessSection = () => {
             Step-by-step guidance, all-in-one support — study abroad made easy.{' '}
           </p>
         </div>
-        <section className="grid grid-cols-1  md:grid-cols-3 success-card-wrapper gap-5 lg:gap-1">
+        <section className="grid grid-cols-1  md:grid-cols-3 success-card-wrapper gap-10 lg:gap-1">
           <article className="relative">
             <h4 className="text-2xl font-semibold absolute -top-5 left-5 z-3 text-[var(--bg-primary-color)]">
               How it works

@@ -43,7 +43,7 @@ const internships = [
 
 export default function InternshipSection() {
   return (
-    <section className="py-16 px-6 md:px-20 bg-white text-center">
+    <section id="exploreuni" className="py-16 px-6 md:px-20 bg-white text-center">
       <h2 className="text-3xl md:text-4xl font-semibold text-Primarytext mb-4">
         100% Internship Guarantee
       </h2>

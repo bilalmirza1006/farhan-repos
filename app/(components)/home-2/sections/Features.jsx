@@ -36,7 +36,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-[100px] px-4 max-w-[1440px] mx-auto flex flex-col gap-10">
+    <section id="features" className="py-[100px] px-4 max-w-[1440px] mx-auto flex flex-col gap-10">
       <div className="max-w-[500px] text-center mx-auto items-center flex flex-col gap-3">
         <h5 className="marker text-[var(--bg-primary-color)] text-sm font-semibold tracking-wide">
           Features

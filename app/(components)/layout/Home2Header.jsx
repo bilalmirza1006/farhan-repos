@@ -16,8 +16,8 @@ const Home2Header = () => {
   };
   const navLinks = [
     { name: 'Features', href: '#features' },
-    { name: 'FAQs', href: '#faqs' },
-    { name: 'Guides', href: '#guides' },
+    { name: 'FAQs', href: '#whatnext' },
+    { name: 'Guides', href: '#exploreuni' },
     { name: 'Career', href: '/career' },
   ];
 

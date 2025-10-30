@@ -15,12 +15,14 @@ const SuccessStories = () => {
       </div>
 
       {/* Image Card */}
-      <div className="relative mt-10 group">
+      <div className="relative mt-10 group success-card-wrapper-c">
+        <div className="img-wrap">
         <img
           src={'/home-2/success-1.jpg'}
           alt="Student"
           className="w-64 h-80 object-cover rounded-2xl shadow-sm border border-gray-100 transition-transform duration-300 group-hover:scale-[1.02]"
         />
+        </div>
 
         {/* Speech bubble (hidden by default, shown on hover) */}
         <div className="absolute bottom-6 right-[-50px] bg-white border border-gray-200 text-gray-700 text-sm font-medium px-3 py-1.5 rounded-full shadow-md flex items-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
