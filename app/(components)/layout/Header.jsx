@@ -15,10 +15,13 @@ export const Header = () => {
       <div className="h-[90px] flex items-center justify-between md:justify-around px-4 py-3 md:py-4">
         {/* Left: Logo & Hamburger */}
         <div className="flex items-center  w-full md:justify-center  gap-3 ">
-          <button className="text-primarycolor  text-2xl md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            className="text-primarycolor  text-2xl md:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             {menuOpen ? <X /> : <Menu />}
           </button>
-          <Link href="/">
+          <Link href="/home-2">
             <img src="/home/logo.png" alt="Logo" className="h-10 md:h-10" />
           </Link>
         </div>
@@ -48,10 +51,24 @@ export const Header = () => {
         {/* Right Buttons */}
         <div className=" flex items-center  gap-2  w-full justify-center  md:gap-4">
           <Link href="https://portal.get2uni.com/login">
-            <Button text="Sign Up" bg="bg-transparent" color="text-black" cn={" hover:bg-primarycolor hover:text-white !px-2 md:!px-6 truncate "} />
+            <Button
+              text="Sign Up"
+              bg="bg-transparent"
+              color="text-black"
+              cn={
+                " hover:bg-primarycolor hover:text-white !px-2 md:!px-6 truncate "
+              }
+            />
           </Link>
-<Link href="https://portal.get2uni.com/signup">          <Button text="Login / Register" bg="bg-primarycolor" color="text-white " cn={"!px-2 md:!px-6 truncate "} />
-</Link>
+          <Link href="https://portal.get2uni.com/signup">
+            {" "}
+            <Button
+              text="Login / Register"
+              bg="bg-primarycolor"
+              color="text-white "
+              cn={"!px-2 md:!px-6 truncate "}
+            />
+          </Link>
           {/* <button className="font-roboto font-medium text-sm leading-5 text-primary hover:underline">Sign up</button>
                     <button className="bg-[#C8102E] text-white px-4 py-2 rounded-md hover:bg-[#a20d26]">
                         Login / Register
